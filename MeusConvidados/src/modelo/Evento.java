@@ -1,8 +1,6 @@
 package modelo;
 
-import saida.Descricoes;
 import java.util.Scanner;
-import saida.LimpaTela;
 
 public class Evento {
 
@@ -17,8 +15,6 @@ public class Evento {
 
 	//objetos instanciados 
 	Scanner ler = new Scanner(System.in);
-	Descricoes entrada = new Descricoes();
-	LimpaTela limpaTela = new LimpaTela();
 	Convidados convidados = new Convidados();
 	Gastos gastos = new Gastos();
 	Tarefas tarefa = new Tarefas();
@@ -126,7 +122,7 @@ public class Evento {
 		System.out.println("Campo p/adicionar anotacoes sobre o evento: ");
 		setAnotacoes(ler.nextLine());
 		setAnotacoes(ler.nextLine());
-		limpaTela.limpaTela(1);
+		System.out.println(" ");
 		System.out.println("Evento criado com sucesso!");
 		System.out.println("Data e horario marcado para: " + dia + "/" + mes + " as " + getHorarioInicio() + "h");
 		System.out.println(" ");
@@ -138,10 +134,10 @@ public class Evento {
 	public void selecaoInicial() {
 		String selecaoInicial = ler.nextLine();
 		if (selecaoInicial.equalsIgnoreCase("Evento")) {
-			limpaTela.limpaTela(1);
+			System.out.println(" ");
 			System.out.println("Para adicionar um Evento, digite: add");
 			selecaoInicial = ler.next();
-			limpaTela.limpaTela(1);
+			System.out.println(" ");
 			if (selecaoInicial.equalsIgnoreCase("add")) {
 				cadastrar(); //acessa o metodo que cadastra o evento
 			} else
