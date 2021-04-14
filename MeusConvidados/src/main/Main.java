@@ -16,7 +16,6 @@ public class Main {
 
 		evento.menu();					//instancia metodo que tras "menu" de selecao, criar e mostra listas
 
-		System.out.println("ok");
 	}
 
 }
