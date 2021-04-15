@@ -15,7 +15,7 @@ import javax.swing.JFrame;
 public class TelaGastos extends JPanel {
 
 	
-	TelaCadastroEvento telaCadastroEvento = new TelaCadastroEvento();
+	TelaCadastroGastos telaCadastroEvento = new TelaCadastroGastos();
 	
 	public TelaGastos() {
 		setBackground(new Color(204, 255, 255));
@@ -23,7 +23,7 @@ public class TelaGastos extends JPanel {
 		setVisible(true);
 		setLayout(null);
 		
-		JLabel lblTitulo = new JLabel("Tarefas\n");
+		JLabel lblTitulo = new JLabel("Gastos\n");
 		lblTitulo.setBounds(12, 12, 509, 46);
 		lblTitulo.setForeground(Color.BLACK);
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -36,7 +36,7 @@ public class TelaGastos extends JPanel {
 		botaoCriarGasto.addActionListener(new Botao() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				TelaCadastroEvento frame = new TelaCadastroEvento();		 
+				TelaCadastroGastos frame = new TelaCadastroGastos();		 
 				frame.setVisible(true);	
 			}
 		});
@@ -45,7 +45,7 @@ public class TelaGastos extends JPanel {
 	public class Botao extends JFrame implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			TelaCadastroEvento frame = new TelaCadastroEvento();		 
+			TelaCadastroGastos frame = new TelaCadastroGastos();		 
 			frame.setVisible(true);				
 		}		
 	}	
