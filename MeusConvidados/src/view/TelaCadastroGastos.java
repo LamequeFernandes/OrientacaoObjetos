@@ -16,15 +16,16 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
 
-public class TelaCadastroTarefas extends JFrame {
+public class TelaCadastroGastos extends JFrame {
 
 	private JPanel cadastroEvento;
-	private final JLabel lblCadastroDeEvento = new JLabel("Nova Tarefa");
+	private final JLabel lblCadastroDeEvento = new JLabel("Novo Gasto");
 	private JTextField textFieldNomeEvento;
+	private JTextField textField;
 	
-	public TelaCadastroTarefas() {
+	public TelaCadastroGastos() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 347, 313);
+		setBounds(100, 100, 351, 286);
 		cadastroEvento = new JPanel();
 		cadastroEvento.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(cadastroEvento);
@@ -36,7 +37,7 @@ public class TelaCadastroTarefas extends JFrame {
 		cadastroEvento.add(lblCadastroDeEvento);
 		this.setLocationRelativeTo(null);	
 		
-		JLabel lblNomeDoEvento = new JLabel("Descrição da Tarefa:");
+		JLabel lblNomeDoEvento = new JLabel("Descrição do Gasto:");
 		lblNomeDoEvento.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNomeDoEvento.setFont(new Font("Dialog", Font.PLAIN, 14));
 		lblNomeDoEvento.setForeground(Color.BLACK);
@@ -44,26 +45,26 @@ public class TelaCadastroTarefas extends JFrame {
 		cadastroEvento.add(lblNomeDoEvento);
 		
 		textFieldNomeEvento = new JTextField();
-		textFieldNomeEvento.setBounds(12, 72, 307, 66);
+		textFieldNomeEvento.setBounds(12, 72, 307, 46);
 		cadastroEvento.add(textFieldNomeEvento);
 		textFieldNomeEvento.setColumns(10);
 		
 		JButton botaoSalvar = new JButton("Salvar");
-		botaoSalvar.setBounds(15, 228, 135, 25);
+		botaoSalvar.setBounds(12, 210, 135, 25);
 		cadastroEvento.add(botaoSalvar);
 		
 		JButton botaoCancelar = new JButton("Cancelar");
-		botaoCancelar.setBounds(184, 228, 135, 25);
+		botaoCancelar.setBounds(184, 210, 135, 25);
 		cadastroEvento.add(botaoCancelar);
 		
-		JLabel lblNewLabel = new JLabel("Prioridade:");
+		JLabel lblNewLabel = new JLabel("Valor Total:");
 		lblNewLabel.setFont(new Font("Dialog", Font.PLAIN, 14));
-		lblNewLabel.setBounds(15, 150, 110, 15);
+		lblNewLabel.setBounds(15, 135, 110, 15);
 		cadastroEvento.add(lblNewLabel);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Baixa ", "Normal", "Alta", "URGENTE"}));
-		comboBox.setBounds(15, 170, 135, 22);
-		cadastroEvento.add(comboBox);
+		textField = new JTextField();
+		textField.setBounds(12, 155, 114, 25);
+		cadastroEvento.add(textField);
+		textField.setColumns(10);
 	}
 }
