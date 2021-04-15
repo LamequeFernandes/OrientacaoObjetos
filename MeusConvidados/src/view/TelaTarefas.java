@@ -7,7 +7,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
 
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -15,7 +14,7 @@ import javax.swing.JFrame;
 
 public class TelaTarefas extends JPanel {
 	
-	TelaCadastroEvento telaCadastroEvento = new TelaCadastroEvento();
+	TelaCadastroTarefas telaCadastroEvento = new TelaCadastroTarefas();
 	
 	public TelaTarefas() {
 		setBackground(new Color(204, 255, 255));
@@ -36,7 +35,7 @@ public class TelaTarefas extends JPanel {
 		botaoCriarTarefa.addActionListener(new Botao() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				TelaCadastroEvento frame = new TelaCadastroEvento();		 
+				TelaCadastroTarefas frame = new TelaCadastroTarefas();		 
 				frame.setVisible(true);	
 			}
 		});
@@ -45,7 +44,7 @@ public class TelaTarefas extends JPanel {
 	public class Botao extends JFrame implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			TelaCadastroEvento frame = new TelaCadastroEvento();		 
+			TelaCadastroTarefas frame = new TelaCadastroTarefas();		 
 			frame.setVisible(true);				
 		}		
 	}	
