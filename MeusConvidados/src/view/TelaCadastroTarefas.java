@@ -8,6 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -55,6 +58,12 @@ public class TelaCadastroTarefas extends JFrame {
 		JButton botaoCancelar = new JButton("Cancelar");
 		botaoCancelar.setBounds(184, 228, 135, 25);
 		cadastroEvento.add(botaoCancelar);
+		botaoCancelar.addActionListener(new ActionListener() {
+			   public void actionPerformed(ActionEvent e) {
+				   TelaCadastroTarefas.this.dispose();
+
+			   }
+			});
 		
 		JLabel lblNewLabel = new JLabel("Prioridade:");
 		lblNewLabel.setFont(new Font("Dialog", Font.PLAIN, 14));
@@ -65,5 +74,11 @@ public class TelaCadastroTarefas extends JFrame {
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Baixa ", "Normal", "Alta", "URGENTE"}));
 		comboBox.setBounds(15, 170, 135, 22);
 		cadastroEvento.add(comboBox);
+	}
+	public class Botao extends JFrame implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {	
+			TelaCadastroTarefas.this.dispose();
+		}		
 	}
 }

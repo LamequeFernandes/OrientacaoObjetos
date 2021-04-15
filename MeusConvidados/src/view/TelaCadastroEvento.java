@@ -8,6 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.JTextField;
@@ -107,5 +110,17 @@ public class TelaCadastroEvento extends JFrame {
 		JButton botaoCancelar = new JButton("Cancelar");
 		botaoCancelar.setBounds(412, 140, 117, 25);
 		cadastroEvento.add(botaoCancelar);
+		botaoCancelar.addActionListener(new ActionListener() {
+			   public void actionPerformed(ActionEvent e) {
+				   TelaCadastroEvento.this.dispose();
+
+			   }
+			});
+	}
+	public class Botao extends JFrame implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {	
+			TelaCadastroEvento.this.dispose();
+		}		
 	}
 }

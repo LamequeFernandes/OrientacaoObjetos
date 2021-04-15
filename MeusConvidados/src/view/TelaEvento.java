@@ -15,7 +15,6 @@ import javax.swing.JFrame;
 
 public class TelaEvento extends JPanel {
 
-	
 	TelaCadastroEvento telaCadastroEvento = new TelaCadastroEvento();
 	
 	public TelaEvento() {
@@ -43,6 +42,11 @@ public class TelaEvento extends JPanel {
 		});
 	}	
 	
+	protected void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	public class Botao extends JFrame implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent e) {
