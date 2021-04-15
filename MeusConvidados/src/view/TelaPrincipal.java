@@ -33,7 +33,7 @@ public class TelaPrincipal extends JFrame {
 			}
 		});
 	}
-
+	
 	public TelaPrincipal() {
 		setBackground(new Color(112, 128, 144));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,6 +44,7 @@ public class TelaPrincipal extends JFrame {
 		TelaPrincipal.setBackground(new Color(0, 0, 0));
 		TelaPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(TelaPrincipal);
+		this.setLocationRelativeTo(null);	
 		
 		telaInicio = new TelaInicio();
 		telaEvento = new TelaEvento();

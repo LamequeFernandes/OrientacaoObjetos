@@ -18,7 +18,7 @@ public class TelaInicio extends JPanel {
 		setLayout(null);
 		
 		JLabel lblInicio = new JLabel("Auxiliar de Festas\n");
-		lblInicio.setBounds(12, 29, 509, 46);
+		lblInicio.setBounds(12, 12, 509, 46);
 		lblInicio.setForeground(Color.BLACK);
 		lblInicio.setHorizontalAlignment(SwingConstants.CENTER);
 		lblInicio.setFont(new Font("Fira Code", Font.BOLD, 34));
