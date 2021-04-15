@@ -7,34 +7,33 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
 
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-public class TelaEvento extends JPanel {
+public class TelaGastos extends JPanel {
 
 	
 	TelaCadastroEvento telaCadastroEvento = new TelaCadastroEvento();
 	
-	public TelaEvento() {
+	public TelaGastos() {
 		setBackground(new Color(204, 255, 255));
 		setBounds(0, 0,533, 379);
 		setVisible(true);
 		setLayout(null);
 		
-		JLabel lblInicio = new JLabel("Eventos\n");
-		lblInicio.setBounds(12, 12, 509, 46);
-		lblInicio.setForeground(Color.BLACK);
-		lblInicio.setHorizontalAlignment(SwingConstants.CENTER);
-		lblInicio.setFont(new Font("Fira Code", Font.BOLD, 34));
-		add(lblInicio);
+		JLabel lblTitulo = new JLabel("Tarefas\n");
+		lblTitulo.setBounds(12, 12, 509, 46);
+		lblTitulo.setForeground(Color.BLACK);
+		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitulo.setFont(new Font("Fira Code", Font.BOLD, 34));
+		add(lblTitulo);
 		
-		JButton botaoCriarEvento = new JButton("Criar novo Evento");
-		botaoCriarEvento.setBounds(196, 342, 165, 25);
-		add(botaoCriarEvento);
-		botaoCriarEvento.addActionListener(new Botao() {
+		JButton botaoCriarGasto = new JButton("Criar novo Gasto");
+		botaoCriarGasto.setBounds(196, 342, 165, 25);
+		add(botaoCriarGasto);
+		botaoCriarGasto.addActionListener(new Botao() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				TelaCadastroEvento frame = new TelaCadastroEvento();		 

@@ -24,19 +24,6 @@ public class TelaCadastroEvento extends JFrame {
 	private JTextField textFieldData;
 	private JTextField textFieldHorario;
 	private JTextField textFieldAnotaçoes;
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaCadastroEvento frame = new TelaCadastroEvento();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 	
 	public TelaCadastroEvento() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -50,6 +37,7 @@ public class TelaCadastroEvento extends JFrame {
 		lblCadastroDeEvento.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCadastroDeEvento.setFont(new Font("Dialog", Font.BOLD, 20));
 		cadastroEvento.add(lblCadastroDeEvento);
+		this.setLocationRelativeTo(null);	
 		
 		JLabel lblNomeDoEvento = new JLabel("Nome do Evento: ");
 		lblNomeDoEvento.setHorizontalAlignment(SwingConstants.LEFT);

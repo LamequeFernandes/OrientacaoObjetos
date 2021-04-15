@@ -20,6 +20,9 @@ public class TelaPrincipal extends JFrame {
 	private JPanel TelaPrincipal;
 	private TelaInicio telaInicio;
 	private TelaEvento telaEvento;
+	private TelaConvidados telaConvidados;
+	private TelaTarefas telaTarefas;
+	private TelaGastos telaGastos;
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -33,7 +36,7 @@ public class TelaPrincipal extends JFrame {
 			}
 		});
 	}
-	
+		
 	public TelaPrincipal() {
 		setBackground(new Color(112, 128, 144));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,6 +51,9 @@ public class TelaPrincipal extends JFrame {
 		
 		telaInicio = new TelaInicio();
 		telaEvento = new TelaEvento();
+		telaConvidados = new TelaConvidados();
+		telaTarefas = new TelaTarefas();
+		telaGastos = new TelaGastos();
 		
 		JLabel lblSair = new JLabel("X");
 		lblSair.setBounds(787, 0, 20, 20);
@@ -141,7 +147,12 @@ public class TelaPrincipal extends JFrame {
 		painelEventos.add(lblIconeEventos);
 		
 		JPanel painelConvidados = new JPanel();
-		painelConvidados.addMouseListener(new PanelButtonMouseAdapter(painelConvidados));
+		painelConvidados.addMouseListener(new PanelButtonMouseAdapter(painelConvidados){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menu(telaConvidados);
+			}
+		});
 		painelConvidados.setBackground(new Color(112, 128, 144));
 		painelConvidados.setBounds(0, 219, 250, 40);
 		painelMenu.add(painelConvidados);
@@ -160,7 +171,12 @@ public class TelaPrincipal extends JFrame {
 		painelConvidados.add(lblIconeConvidados);
 		
 		JPanel painelTarefas = new JPanel();
-		painelTarefas.addMouseListener(new PanelButtonMouseAdapter(painelTarefas));
+		painelTarefas.addMouseListener(new PanelButtonMouseAdapter(painelTarefas){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menu(telaTarefas);
+			}
+		});
 		painelTarefas.setBackground(new Color(112, 128, 144));
 		painelTarefas.setBounds(0, 259, 250, 40);
 		painelMenu.add(painelTarefas);
@@ -179,7 +195,12 @@ public class TelaPrincipal extends JFrame {
 		painelTarefas.add(lblIconeTarefas);
 		
 		JPanel painelGastos = new JPanel();
-		painelGastos.addMouseListener(new PanelButtonMouseAdapter(painelGastos));
+		painelGastos.addMouseListener(new PanelButtonMouseAdapter(painelGastos){
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				menu(telaGastos);
+			}
+		});
 		painelGastos.setBackground(new Color(112, 128, 144));
 		painelGastos.setBounds(0, 299, 250, 40);
 		painelMenu.add(painelGastos);
@@ -204,6 +225,9 @@ public class TelaPrincipal extends JFrame {
 		
 		panelConteudo.add(telaInicio);
 		panelConteudo.add(telaEvento);
+		panelConteudo.add(telaConvidados);
+		panelConteudo.add(telaTarefas);
+		panelConteudo.add(telaGastos);
 		panelConteudo.setLayout(null);
 		
 		menu(telaInicio);		
@@ -213,6 +237,9 @@ public class TelaPrincipal extends JFrame {
 	public void menu(JPanel panel) {
 		telaInicio.setVisible(false);
 		telaEvento.setVisible(false);
+		telaConvidados.setVisible(false);
+		telaTarefas.setVisible(false);
+		telaGastos.setVisible(false);
 		
 		panel.setVisible(true);
 	}
