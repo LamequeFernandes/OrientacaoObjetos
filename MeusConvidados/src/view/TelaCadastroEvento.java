@@ -80,7 +80,8 @@ public class TelaCadastroEvento extends JFrame {
 		textFieldNomeEvento.setColumns(10);
 		
 		JComboBox boxTipoEvento = new JComboBox();
-		boxTipoEvento.setModel(new DefaultComboBoxModel(new String[] {"Aniversario", "Casamento", "Formatura", "Religioso", "Esportivo", "Academico", "Corpotativo", "Outro..."}));
+		boxTipoEvento.setModel(new DefaultComboBoxModel(new String[] {"Aniversario", "Casamento", "Formatura", 
+				"Religioso", "Esportivo", "Academico", "Corpotativo", "Outro..."}));
 		boxTipoEvento.setBounds(138, 78, 220, 20);
 		cadastroEvento.add(boxTipoEvento);
 		
