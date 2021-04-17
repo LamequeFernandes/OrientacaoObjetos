@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Evento {
@@ -12,7 +13,9 @@ public class Evento {
 	private int horarioInicio;
 	private String anotacoes;
 	private int parar;
-
+//	private ArrayList<Convidados> listaConvidados = new ArrayList<Convidados>();
+	
+	
 	//objetos instanciados 
 	Scanner ler = new Scanner(System.in);
 	Convidados convidados = new Convidados();

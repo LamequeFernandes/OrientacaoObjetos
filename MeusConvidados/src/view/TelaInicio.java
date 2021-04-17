@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
 public class TelaInicio extends JPanel {
 
 	public TelaInicio() {
-		setBackground(new Color(204, 255, 255));
+		setBackground(new Color(112, 128, 144));
 		setBounds(0, 0,533, 379);
 		setLayout(null);
 		
