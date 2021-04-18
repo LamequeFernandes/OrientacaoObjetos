@@ -6,7 +6,7 @@ public class Tarefas {
 	
 	//atributos
 	private String descricaoTarefa;
-	private int prioridadeTarefa;
+	private String prioridadeTarefa;
 	private Status status;
 	private int numTarefas;
 	private String[] tarefaCadastradas = new String[30];	
@@ -33,13 +33,7 @@ public class Tarefas {
 		this.tarefaCadastradas[i] = descricaoTarefa;
 	}
 
-	public int getPrioridadeTarefa() {
-		return prioridadeTarefa;
-	}
-
-	public void setPrioridadeTarefa(int prioridadeTarefa) {
-		this.prioridadeTarefa = prioridadeTarefa;
-	}
+	
 
 	public Status getStatus() {
 		return status;
@@ -61,7 +55,7 @@ public class Tarefas {
 				setDescricaoTarefa(ler.nextLine(), contador);
 				setDescricaoTarefa(ler.nextLine(), contador);
 				System.out.print("Prioridade, de 1 a 10: ");
-				setPrioridadeTarefa(ler.nextInt());
+				setPrioridadeTarefa(ler.nextLine());
 
 				System.out.println(" ");
 				System.out.println("Tarefa cadastrada com sucesso!");
@@ -72,6 +66,18 @@ public class Tarefas {
 		} 
 	}
 	
+	public String getPrioridadeTarefa() {
+		return prioridadeTarefa;
+	}
+
+	public void setPrioridadeTarefa(String prioridadeTarefa) {
+		this.prioridadeTarefa = prioridadeTarefa;
+	}
+
+	public void setDescricaoTarefa(String descricaoTarefa) {
+		this.descricaoTarefa = descricaoTarefa;
+	}
+
 	//metodo para mostrar lista de tarefas
 	public void consultarGastosCadastrados() {
 		System.out.println(" ");

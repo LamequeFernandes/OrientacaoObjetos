@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Gastos {
 	//atributos
-	private String nomeGasto;
+	private String descricaoGasto;
 	private double valorGasto;
 	private String[] gastosCadastrados = new String[30];
 	private int numGastos;
@@ -21,14 +21,14 @@ public class Gastos {
 
 	public void setNumGastos(int numGastos) {
 		this.numGastos = numGastos;
+	}	
+
+	public String getDescricaoGasto() {
+		return descricaoGasto;
 	}
 
-	public String getNomeGasto() {
-		return nomeGasto;
-	}
-
-	public void setNomeGasto(String nomeGasto, int i) {
-		this.gastosCadastrados[i] = nomeGasto;
+	public void setDescricaoGasto(String descricaoGasto) {
+		this.descricaoGasto = descricaoGasto;
 	}
 
 	public double getValorGasto() {
@@ -49,8 +49,6 @@ public class Gastos {
 				System.out.println(" ");
 				System.out.println("Gasto " + (contador + 1) + ": ");
 				System.out.print("Nome do Gasto ou item: ");
-				setNomeGasto(ler.nextLine(), contador);
-				setNomeGasto(ler.nextLine(), contador);
 				System.out.print("Valor, com centavos: ");
 				setValorGasto(ler.nextDouble());
 

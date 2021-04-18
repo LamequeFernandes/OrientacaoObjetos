@@ -40,7 +40,7 @@ public class TelaConvidados extends JPanel {
 		setVisible(true);
 		setLayout(null);
 				
-		JLabel lblTitulo = new JLabel("Convidados\n");
+		JLabel lblTitulo = new JLabel("Lista de convidados\n");
 		lblTitulo.setBounds(12, 12, 644, 35);
 		lblTitulo.setForeground(Color.BLACK);
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
