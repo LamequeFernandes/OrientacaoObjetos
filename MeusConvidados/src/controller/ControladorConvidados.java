@@ -7,13 +7,11 @@ import java.util.Scanner;
 import javax.swing.table.AbstractTableModel;
 
 import modelo.Convidados;
-import view.TelaCadastroConvidados;
 
 import javax.swing.JTextField;
 
 public class ControladorConvidados {
-		Convidados c = new Convidados();
-		TelaCadastroConvidados t = new TelaCadastroConvidados();
+//		Convidados c = new Convidados();
 
 		
 		

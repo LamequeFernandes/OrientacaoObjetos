@@ -9,7 +9,7 @@ public class Convidados extends Pessoa {
 	private Status status;
 	private int numConvidados;
 	private String[] convidadosCadastrados = new String[30];
-	
+		
 	Scanner ler = new Scanner(System.in);
 
 	public Convidados() {}
@@ -73,21 +73,7 @@ public class Convidados extends Pessoa {
 
 	public void setNumTelefone(long numTelefone) {
 		this.numTelefone = numTelefone;
-	}
-
-	public String getIdadee() {
-		return idadee;
-	}
-	public void setIdadee(String idadee) {
-		this.idadee = idadee;
-	}
-	
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
+	}	
 	
 	// metodo para cadastrar convidados
 	public void cadastrar() {
@@ -126,9 +112,5 @@ public class Convidados extends Pessoa {
 		for (int i = 0; i < getNumConvidados(); i++) {
 			System.out.println((i + 1) + "-" + convidadosCadastrados[i]);
 		}
-	}
-
-	public void cadastrarConvidados(Convidados convidados) {		
-		
 	}
 }

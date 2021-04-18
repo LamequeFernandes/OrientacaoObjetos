@@ -6,8 +6,6 @@ public abstract class Pessoa {
 	protected long numTelefone;
 ///////////////////////////////
 	protected String nome;
-	protected String idadee;
-	protected String telefone;
 	protected String sexo;
 	protected String email;
 	protected String endereco;

@@ -18,7 +18,7 @@ public class TelaTarefas extends JPanel {
 	
 	public TelaTarefas() {
 		setBackground(new Color(204, 255, 255));
-		setBounds(0, 0,533, 379);
+		setBounds(0, 0, 668, 454);
 		setVisible(true);
 		setLayout(null);
 		

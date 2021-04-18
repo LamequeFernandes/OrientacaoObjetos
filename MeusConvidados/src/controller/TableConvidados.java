@@ -2,10 +2,10 @@ package controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.table.AbstractTableModel;
 
 import modelo.Convidados;
+
 
 public class TableConvidados extends AbstractTableModel{
 	
@@ -36,14 +36,14 @@ public class TableConvidados extends AbstractTableModel{
 				case 1:
 					return dados.get(linha).getTipoConvidado();
 				case 2:
-					return dados.get(linha).getIdadee();
+					return dados.get(linha).getIdade();
 				case 3:
-					return dados.get(linha).getTelefone();				
+					return dados.get(linha).getNumTelefone();				
 			}			
 			return null;
 		}
 		
-		public void addLinha(Convidados c) {
+		public void addLinha(Convidados c) {			
 			this.dados.add(c);
 			this.fireTableDataChanged();
 		}		

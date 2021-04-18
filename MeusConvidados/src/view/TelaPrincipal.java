@@ -14,6 +14,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.UIManager;
 
 public class TelaPrincipal extends JFrame {
 
@@ -40,25 +41,26 @@ public class TelaPrincipal extends JFrame {
 	public TelaPrincipal() {
 		setBackground(new Color(112, 128, 144));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 807, 418);
+		setBounds(100, 100, 940, 487);
 		setUndecorated(true);
 		TelaPrincipal = new JPanel();
 		TelaPrincipal.setForeground(new Color(112, 128, 144));
-		TelaPrincipal.setBackground(new Color(0, 0, 0));
+		TelaPrincipal.setBackground(Color.WHITE);
 		TelaPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(TelaPrincipal);
 		this.setLocationRelativeTo(null);	
 		
 		telaInicio = new TelaInicio();
+		telaInicio.setBounds(0, 0, 668, 454);
 		telaEvento = new TelaEvento();
 		telaConvidados = new TelaConvidados();
 		telaTarefas = new TelaTarefas();
 		telaGastos = new TelaGastos();
 		
 		JLabel lblSair = new JLabel("X");
-		lblSair.setBounds(787, 0, 20, 20);
+		lblSair.setBounds(910, 0, 20, 20);
 		lblSair.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSair.setForeground(Color.WHITE);
+		lblSair.setForeground(Color.BLACK);
 		lblSair.setFont(new Font("Comic Sans MS", Font.BOLD, 14));
 		lblSair.addMouseListener(new MouseAdapter() {
 			@Override
@@ -71,7 +73,7 @@ public class TelaPrincipal extends JFrame {
 				lblSair.setForeground(Color.RED);
 			}
 			public void mouseExited(MouseEvent arg0) {
-				lblSair.setForeground(Color.WHITE);
+				lblSair.setForeground(Color.BLACK);
 			}
 		});
 		TelaPrincipal.setLayout(null);
@@ -79,34 +81,34 @@ public class TelaPrincipal extends JFrame {
 		
 		
 		JPanel painelMenu = new JPanel();
-		painelMenu.setBounds(0, 0, 250, 418);
+		painelMenu.setBounds(0, 0, 250, 555);
 		painelMenu.setForeground(new Color(112, 128, 144));
-		painelMenu.setBackground(new Color(112, 128, 144));
+		painelMenu.setBackground(UIManager.getColor("ColorChooser.foreground"));
 		TelaPrincipal.add(painelMenu);
 		painelMenu.setLayout(null);
 		
 		JLabel logo = new JLabel("");
-		logo.setBounds(12, 12, 228, 115);
+		logo.setBounds(12, 37, 228, 115);
 		logo.setHorizontalAlignment(SwingConstants.CENTER);
 		logo.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/imagens/logo.png")));
 		painelMenu.add(logo);
 		
 		JLabel iconeUnb = new JLabel("");
-		iconeUnb.setBounds(0, 348, 250, 70);
+		iconeUnb.setBounds(0, 376, 250, 70);
 		iconeUnb.setHorizontalAlignment(SwingConstants.CENTER);
 		iconeUnb.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/imagens/unbLogoPequena.png")));
 		painelMenu.add(iconeUnb);
 		
 		JPanel painelInicio = new JPanel();
-		painelInicio.setForeground(new Color(112, 128, 144));
+		painelInicio.setForeground(Color.DARK_GRAY);
 		painelInicio.addMouseListener(new PanelButtonMouseAdapter(painelInicio){
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				menu(telaInicio);
 			}
 		});
-		painelInicio.setBackground(new Color(112, 128, 144));
-		painelInicio.setBounds(0, 139, 250, 40);
+		painelInicio.setBackground(UIManager.getColor("EditorPane.caretForeground"));
+		painelInicio.setBounds(0, 164, 250, 40);
 		painelMenu.add(painelInicio);
 		painelInicio.setLayout(null);
 		
@@ -129,8 +131,8 @@ public class TelaPrincipal extends JFrame {
 				menu(telaEvento);
 			}
 		});
-		painelEventos.setBackground(new Color(112, 128, 144));
-		painelEventos.setBounds(0, 179, 250, 40);
+		painelEventos.setBackground(UIManager.getColor("EditorPane.caretForeground"));
+		painelEventos.setBounds(0, 204, 250, 40);
 		painelMenu.add(painelEventos);
 		painelEventos.setLayout(null);
 		
@@ -153,8 +155,8 @@ public class TelaPrincipal extends JFrame {
 				menu(telaConvidados);
 			}
 		});
-		painelConvidados.setBackground(new Color(112, 128, 144));
-		painelConvidados.setBounds(0, 219, 250, 40);
+		painelConvidados.setBackground(UIManager.getColor("EditorPane.caretForeground"));
+		painelConvidados.setBounds(0, 244, 250, 40);
 		painelMenu.add(painelConvidados);
 		painelConvidados.setLayout(null);
 		
@@ -177,8 +179,8 @@ public class TelaPrincipal extends JFrame {
 				menu(telaTarefas);
 			}
 		});
-		painelTarefas.setBackground(new Color(112, 128, 144));
-		painelTarefas.setBounds(0, 259, 250, 40);
+		painelTarefas.setBackground(UIManager.getColor("EditorPane.caretForeground"));
+		painelTarefas.setBounds(0, 284, 250, 40);
 		painelMenu.add(painelTarefas);
 		painelTarefas.setLayout(null);
 		
@@ -201,8 +203,8 @@ public class TelaPrincipal extends JFrame {
 				menu(telaGastos);
 			}
 		});
-		painelGastos.setBackground(new Color(112, 128, 144));
-		painelGastos.setBounds(0, 299, 250, 40);
+		painelGastos.setBackground(UIManager.getColor("EditorPane.caretForeground"));
+		painelGastos.setBounds(0, 324, 250, 40);
 		painelMenu.add(painelGastos);
 		painelGastos.setLayout(null);
 		
@@ -220,7 +222,7 @@ public class TelaPrincipal extends JFrame {
 		
 
 		JPanel panelConteudo = new JPanel();
-		panelConteudo.setBounds(262, 22, 533, 379);
+		panelConteudo.setBounds(262, 22, 668, 454);
 		TelaPrincipal.add(panelConteudo);
 		
 		panelConteudo.add(telaInicio);
@@ -257,11 +259,11 @@ public class TelaPrincipal extends JFrame {
 		}
 		@Override
 		public void mouseExited(MouseEvent e) {
-			painel.setBackground(new Color(112, 128, 144));
+			painel.setBackground(UIManager.getColor("ColorChooser.foreground"));
 		}
 		@Override
 		public void mousePressed(MouseEvent e) {
-			painel.setBackground(new Color(105, 105, 105));
+			painel.setBackground(UIManager.getColor("ColorChooser.foreground"));
 		}
 		@Override
 		public void mouseReleased(MouseEvent e) {

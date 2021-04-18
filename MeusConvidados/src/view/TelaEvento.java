@@ -18,8 +18,8 @@ public class TelaEvento extends JPanel {
 	TelaCadastroEvento telaCadastroEvento = new TelaCadastroEvento();
 	
 	public TelaEvento() {
-		setBackground(new Color(204, 255, 255));
-		setBounds(0, 0,533, 379);
+		setBackground(Color.WHITE);
+		setBounds(0, 0, 668, 454);
 		setVisible(true);
 		setLayout(null);
 		
