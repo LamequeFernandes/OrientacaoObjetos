@@ -2,6 +2,7 @@ package view;
 
 import controller.ControladorGastos;
 import modelo.Convidados;
+import modelo.Evento;
 import modelo.Gastos;
 import modelo.Tarefas;
 
@@ -15,6 +16,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.util.ArrayList;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -28,13 +32,27 @@ import javax.swing.JComboBox;
 public class TelaGastos extends JPanel {
 	private JTable jTGastos;
 	private JTable table;
-//	private javax.swing.JScrollPane jScrollPane1;
-	
-	ControladorGastos tableModel = new ControladorGastos();
 	private JTextField txtDescricao;
 	private JTextField txtValor;
+	private JComboBox comboBoxSelecionarEvento;
+	ControladorGastos tableModel = new ControladorGastos();
+	ArrayList<Evento> eventoArray;	
 	
-	public TelaGastos() {
+	public TelaGastos(ArrayList listaEvento) {
+    
+        this.eventoArray = listaEvento;
+        initComponents();
+       
+        addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentShown(ComponentEvent e) {
+                super.componentShown(e);               
+                comboBoxSelecionarEvento.setModel(new DefaultComboBoxModel(getListModel()));
+            }
+
+        });
+    }
+	private void initComponents() {
 		setBackground(Color.WHITE);
 		setBounds(0, 0, 668, 454);
 		setVisible(true);
@@ -48,7 +66,7 @@ public class TelaGastos extends JPanel {
 		add(lblTitulo);
 		
 		JScrollPane scroll = new JScrollPane();
-		scroll.setBounds(28, 211, 611, 225);
+		scroll.setBounds(28, 220, 611, 216);
 		add(scroll);
 		
 		jTGastos = new JTable();
@@ -65,9 +83,9 @@ public class TelaGastos extends JPanel {
 	        ));
 		scroll.setViewportView(jTGastos);
 		jTGastos.setModel(tableModel);
-		jTGastos.getColumnModel().getColumn(0).setPreferredWidth(320);
-		jTGastos.getColumnModel().getColumn(1).setPreferredWidth(100);
-		jTGastos.getColumnModel().getColumn(2).setPreferredWidth(191);
+//		jTGastos.getColumnModel().getColumn(0).setPreferredWidth(320);
+//		jTGastos.getColumnModel().getColumn(1).setPreferredWidth(100);
+//		jTGastos.getColumnModel().getColumn(2).setPreferredWidth(191);
 		
 		txtDescricao = new JTextField();
 		txtDescricao.setBounds(28, 87, 309, 35);
@@ -80,13 +98,18 @@ public class TelaGastos extends JPanel {
 		
 		JLabel lblValor = new JLabel("Valor total:");
 		lblValor.setFont(new Font("Dialog", Font.BOLD, 13));
-		lblValor.setBounds(28, 140, 91, 19);
+		lblValor.setBounds(28, 130, 91, 19);
 		add(lblValor);
 		
 		JComboBox boxFormaPagamento = new JComboBox();
 		boxFormaPagamento.setModel(new DefaultComboBoxModel(new String[] {"Débito", "Crédito", "Dinheiro"}));
-		boxFormaPagamento.setBounds(191, 176, 145, 19);
+		boxFormaPagamento.setBounds(191, 160, 145, 19);
 		add(boxFormaPagamento);
+		
+		comboBoxSelecionarEvento = new JComboBox();
+		comboBoxSelecionarEvento.setModel(new DefaultComboBoxModel(getListModel()));
+		comboBoxSelecionarEvento.setBounds(88, 190, 249, 19);
+		add(comboBoxSelecionarEvento);
 		
 		JButton botaoAdicionar = new JButton("Adicionar");
 		botaoAdicionar.setBounds(475, 79, 162, 25);
@@ -131,15 +154,26 @@ public class TelaGastos extends JPanel {
 		add(botaoEditar);			
 		
 		txtValor = new JTextField();
-		txtValor.setBounds(117, 140, 220, 19);
+		txtValor.setBounds(117, 130, 220, 19);
 		add(txtValor);
 		txtValor.setColumns(10);
 		
 		JLabel lblFormaDoPagamento = new JLabel("Forma de Pagamento:");
-		lblFormaDoPagamento.setBounds(28, 179, 167, 15);
+		lblFormaDoPagamento.setBounds(28, 160, 167, 15);
 		add(lblFormaDoPagamento);
 		
-		
-	}	  
-	
+		JLabel lblEvento = new JLabel("Evento:");
+		lblEvento.setBounds(28, 193, 70, 15);
+		add(lblEvento);		
+			
+	}
+	private String[] getListModel() {
+        String[] stringEvento = new String[eventoArray.size()];
+
+        for (int i = 0; i < eventoArray.size(); i++) {
+            stringEvento[i] = eventoArray.get(i).getNomeEvento();
+            System.out.println(eventoArray.get(i).getNomeEvento());
+        }
+        return stringEvento;
+    }
 }

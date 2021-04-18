@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.Scanner;
 
-public class Gastos {
+public class Gastos{
 	//atributos
 	private String descricaoGasto;
 	private double valorGasto;

@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
+import modelo.Evento;
 import modelo.Gastos;
 
 
 public class ControladorGastos extends AbstractTableModel{
 	
 		private List<Gastos> dados = new ArrayList<>();
+//		private List<Evento> dadosEvento = new ArrayList<>();
+
+		
 		private String[] colunas = {"Descrição", "Valor R$", "Forma de Pagamento"};
 		
 		@Override
@@ -37,7 +41,9 @@ public class ControladorGastos extends AbstractTableModel{
 					return dados.get(linha).getValorGasto();	
 				case 2:
 					return dados.get(linha).getFormaPagamento();
-			}			
+	/*			case 3:
+					return dados.get(linha).getNomeEvento();
+	*/		}			
 			return null;
 		}
 		

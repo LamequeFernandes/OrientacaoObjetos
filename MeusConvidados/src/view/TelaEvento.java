@@ -24,19 +24,27 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 public class TelaEvento extends JPanel {
 	private JTable jTEvento;
 	private JTable table;
-//	private javax.swing.JScrollPane jScrollPane1;
+	ArrayList<Evento> eventoArray;
+	
 	
 	ControladorEvento tableModel = new ControladorEvento();
 	private JTextField txtTitulo;
 	private JTextField txtData;
 	private JTextField txtHorario;
 	private JTextField txtAnotacoes;
+
+	public TelaEvento(ArrayList<Evento> listaEvento) {
+        //recebe a lista de filmes do Frame
+        this.eventoArray = listaEvento;
+        initComponents();        
+    }
 	
-	public TelaEvento() {
+	private void initComponents() {
 		setBackground(Color.WHITE);
 		setBounds(0, 0, 668, 454);
 		setVisible(true);
@@ -116,7 +124,7 @@ public class TelaEvento extends JPanel {
 		boxTipoEvento.setModel(new DefaultComboBoxModel(new String[] {"Aniversario", "Casamento", "Formatura", 
 				"Religioso", "Esportivo", "Academico", "Corpotativo", "Outro..."}));
 		boxTipoEvento.setBounds(28, 133, 309, 19);
-		add(boxTipoEvento);
+		this.add(boxTipoEvento);
 		
 		JButton botaoAdicionar = new JButton("Adicionar");
 		botaoAdicionar.setBounds(477, 133, 162, 25);
@@ -124,13 +132,20 @@ public class TelaEvento extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				String tipoEvento = boxTipoEvento.getSelectedItem().toString();
 				Evento e = new Evento();
+				
 				e.setNomeEvento(txtTitulo.getText());				
 				e.setTipoEvento(tipoEvento);
 		        e.setDataEvento((txtData.getText()));
 		        e.setHorarioInicio(txtHorario.getText());
 		        
 		        tableModel.addLinha(e);
-		        JOptionPane.showMessageDialog(null, "Evento cadastrado com sucesso!");			
+		        eventoArray.add(e);
+		        JOptionPane.showMessageDialog(null, "Evento cadastrado com sucesso!");		
+		   //   txtTitulo.setText(null);
+		        txtData.setText(null);
+		        txtHorario.setText(null);
+		        txtData.setText(null);			
+				
 			}
 		});
 		add(botaoAdicionar);		

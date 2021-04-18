@@ -1,8 +1,10 @@
 package view;
 
 import controller.ControladorConvidados;
+import controller.ControladorGastos;
 import controller.ControladorTarefas;
 import modelo.Convidados;
+import modelo.Evento;
 import modelo.Tarefas;
 
 import javax.swing.JPanel;
@@ -15,6 +17,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.util.ArrayList;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -28,12 +33,29 @@ import javax.swing.JComboBox;
 public class TelaTarefas extends JPanel {
 	private JTable jTTarefas;
 	private JTable table;
-//	private javax.swing.JScrollPane jScrollPane1;
-	
+	private JComboBox comboBoxSelecionarEvento;
 	ControladorTarefas tableModel = new ControladorTarefas();
+	ArrayList<Evento> eventoArray;
+	
+
 	private JTextField txtDescricao;
 	
-	public TelaTarefas() {
+	public TelaTarefas(ArrayList listaEvento) {
+		this.eventoArray = listaEvento;
+        initComponents();
+       
+        addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentShown(ComponentEvent e) {
+                super.componentShown(e);               
+                comboBoxSelecionarEvento.setModel(new DefaultComboBoxModel(getListModel()));
+            }
+
+        });
+	}
+	
+	private void initComponents() {
+
 		setBackground(Color.WHITE);
 		setBounds(0, 0, 668, 454);
 		setVisible(true);
@@ -47,7 +69,7 @@ public class TelaTarefas extends JPanel {
 		add(lblTitulo);
 		
 		JScrollPane scroll = new JScrollPane();
-		scroll.setBounds(28, 211, 611, 225);
+		scroll.setBounds(28, 224, 611, 212);
 		add(scroll);
 		
 		jTTarefas = new JTable();
@@ -68,22 +90,22 @@ public class TelaTarefas extends JPanel {
 		jTTarefas.getColumnModel().getColumn(1).setPreferredWidth(161);
 		
 		txtDescricao = new JTextField();
-		txtDescricao.setBounds(28, 82, 309, 83);
+		txtDescricao.setBounds(28, 75, 309, 83);
 		add(txtDescricao);
 		txtDescricao.setColumns(10);
 		
 		JLabel lblDescricao = new JLabel("Descrição:");
-		lblDescricao.setBounds(28, 62, 222, 15);
+		lblDescricao.setBounds(28, 55, 222, 15);
 		add(lblDescricao);
 		
 		JLabel lblPrioridade = new JLabel("Prioridade:");
 		lblPrioridade.setFont(new Font("Dialog", Font.BOLD, 13));
-		lblPrioridade.setBounds(28, 182, 91, 19);
+		lblPrioridade.setBounds(28, 165, 91, 19);
 		add(lblPrioridade);
 		
 		JComboBox boxPrioridade = new JComboBox();
 		boxPrioridade.setModel(new DefaultComboBoxModel(new String[] {"Desejavel", "Necessario", "Essencial", "URGENTE"}));
-		boxPrioridade.setBounds(115, 182, 222, 19);
+		boxPrioridade.setBounds(115, 165, 222, 19);
 		add(boxPrioridade);
 		
 		JButton botaoAdicionar = new JButton("Adicionar");
@@ -125,6 +147,25 @@ public class TelaTarefas extends JPanel {
 		botaoEditar.setBounds(475, 174, 162, 25);
 		add(botaoEditar);			
 		
-	}	  
+		JLabel lblEvento = new JLabel("Evento:");
+		lblEvento.setBounds(28, 196, 70, 15);
+		add(lblEvento);
+		
+		comboBoxSelecionarEvento = new JComboBox();
+		comboBoxSelecionarEvento.setModel(new DefaultComboBoxModel(getListModel()));
+		comboBoxSelecionarEvento.setBounds(94, 193, 247, 19);
+		add(comboBoxSelecionarEvento);
+	}
+	
+	
+	private String[] getListModel() {
+        String[] stringEvento = new String[eventoArray.size()];
+
+        for (int i = 0; i < eventoArray.size(); i++) {
+            stringEvento[i] = eventoArray.get(i).getNomeEvento();
+            System.out.println(eventoArray.get(i).getNomeEvento());
+        }
+        return stringEvento;
+    }
 	
 }

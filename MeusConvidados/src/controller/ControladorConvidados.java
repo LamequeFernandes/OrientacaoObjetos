@@ -5,11 +5,14 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 import modelo.Convidados;
+import modelo.Evento;
 
 
 public class ControladorConvidados extends AbstractTableModel{
 	
 		private List<Convidados> dados = new ArrayList<>();
+//		private List<Evento> dadosEvento = new ArrayList<>();
+		
 		private String[] colunas = {"Nome", "Tipo", "Idade", "Telefone"};
 		
 		@Override
@@ -39,7 +42,9 @@ public class ControladorConvidados extends AbstractTableModel{
 					return dados.get(linha).getIdade();
 				case 3:
 					return dados.get(linha).getNumTelefone();	
-			}			
+/*				case 4:
+					return dadosEvento.get(linha).getNomeEvento();
+*/			}			
 			return null;
 		}
 		
@@ -58,6 +63,10 @@ public class ControladorConvidados extends AbstractTableModel{
 			case 3:
 				dados.get(linha).setNumTelefone(Long.parseLong((String) valor));		
 				break;
+	/*		case 4:
+				dadosEvento.get(linha).setNomeEvento((String) valor);
+				break;
+*/
 			}		
 			this.fireTableRowsUpdated(linha, linha);
 		}
@@ -66,7 +75,7 @@ public class ControladorConvidados extends AbstractTableModel{
 			this.dados.add(c);
 			this.fireTableDataChanged();
 		}		
-		
+				
 		public void removeLinha(int linha){
 	        this.dados.remove(linha);
 	        this.fireTableRowsDeleted(linha, linha);

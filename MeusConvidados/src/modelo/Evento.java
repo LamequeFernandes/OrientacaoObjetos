@@ -93,6 +93,11 @@ public class Evento {
 	public void setAnotacoes(String anotacoes) {
 		this.anotacoes = anotacoes;
 	}
+	
+	@Override
+	public String toString() {
+		return nomeEvento;
+	}
 
 	// metodo para limpeza de tela
 	public void limpaTela(int numLinhas) {

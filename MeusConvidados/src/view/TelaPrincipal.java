@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import modelo.Evento;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -14,6 +17,8 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+
 import javax.swing.UIManager;
 
 public class TelaPrincipal extends JFrame {
@@ -24,6 +29,7 @@ public class TelaPrincipal extends JFrame {
 	private TelaConvidados telaConvidados;
 	private TelaTarefas telaTarefas;
 	private TelaGastos telaGastos;
+	private ArrayList<Evento> eventoArray = new ArrayList<>();
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -52,10 +58,10 @@ public class TelaPrincipal extends JFrame {
 		
 		telaInicio = new TelaInicio();
 		telaInicio.setBounds(0, 0, 668, 454);
-		telaEvento = new TelaEvento();
-		telaConvidados = new TelaConvidados();
-		telaTarefas = new TelaTarefas();
-		telaGastos = new TelaGastos();
+		telaEvento = new TelaEvento(eventoArray);
+		telaConvidados = new TelaConvidados(eventoArray);
+		telaTarefas = new TelaTarefas(eventoArray);
+		telaGastos = new TelaGastos(eventoArray);
 		
 		JLabel lblSair = new JLabel("X");
 		lblSair.setBounds(910, 0, 20, 20);
