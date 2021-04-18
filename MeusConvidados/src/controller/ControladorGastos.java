@@ -41,6 +41,22 @@ public class ControladorGastos extends AbstractTableModel{
 			return null;
 		}
 		
+		@Override
+		public void setValueAt(Object valor, int linha, int coluna) {
+			switch(coluna) {
+			case 0:
+				dados.get(linha).setDescricaoGasto((String) valor);
+				break;
+			case 1:
+				dados.get(linha).setValorGasto(Double.parseDouble((String) valor));
+				break;
+			case 2:
+				dados.get(linha).setFormaPagamento((String) valor);
+				break;
+			}		
+			this.fireTableRowsUpdated(linha, linha);
+		}
+		
 		public void addLinha(Gastos g) {			
 			this.dados.add(g);
 			this.fireTableDataChanged();

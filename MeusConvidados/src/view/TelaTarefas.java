@@ -111,6 +111,15 @@ public class TelaTarefas extends JPanel {
 		add(botaoRemover);
 		
 		JButton botaoEditar = new JButton("Editar");
+		botaoEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String prioridade = boxPrioridade.getSelectedItem().toString();
+				if(jTTarefas.getSelectedRow() != -1) {
+					tableModel.setValueAt(txtDescricao.getText(), jTTarefas.getSelectedRow(), 0);
+					tableModel.setValueAt(prioridade, jTTarefas.getSelectedRow(), 1);
+				}
+			}
+		});
 		botaoEditar.setBounds(475, 174, 162, 25);
 		add(botaoEditar);			
 		

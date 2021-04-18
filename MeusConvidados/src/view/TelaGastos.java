@@ -114,6 +114,16 @@ public class TelaGastos extends JPanel {
 		add(botaoRemover);
 		
 		JButton botaoEditar = new JButton("Editar");
+		botaoEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String formaPagamento = boxFormaPagamento.getSelectedItem().toString();
+				if(jTGastos.getSelectedRow() != -1) {
+					tableModel.setValueAt(txtDescricao.getText(), jTGastos.getSelectedRow(), 0);
+					tableModel.setValueAt(txtValor.getText(), jTGastos.getSelectedRow(), 1);
+					tableModel.setValueAt(formaPagamento, jTGastos.getSelectedRow(), 2);
+				}
+			}
+		});
 		botaoEditar.setBounds(475, 174, 162, 25);
 		add(botaoEditar);			
 		

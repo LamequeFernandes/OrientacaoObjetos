@@ -140,6 +140,17 @@ public class TelaConvidados extends JPanel {
 		add(botaoRemover);
 		
 		JButton botaoEditar = new JButton("Editar");
+		botaoEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String tipoConvidado = boxTipoConvidado.getSelectedItem().toString();
+				if(jTConvidados.getSelectedRow() != -1) {
+					tableModel.setValueAt(txtNome.getText(), jTConvidados.getSelectedRow(), 0);
+					tableModel.setValueAt(tipoConvidado, jTConvidados.getSelectedRow(), 1);
+					tableModel.setValueAt(txtIdade.getText(), jTConvidados.getSelectedRow(), 2);
+					tableModel.setValueAt(txtTelefone.getText(), jTConvidados.getSelectedRow(), 3);
+				}
+			}
+		});
 		botaoEditar.setBounds(475, 174, 162, 25);
 		add(botaoEditar);			
 		

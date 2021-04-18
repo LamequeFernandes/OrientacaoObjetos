@@ -43,6 +43,25 @@ public class ControladorConvidados extends AbstractTableModel{
 			return null;
 		}
 		
+		@Override
+		public void setValueAt(Object valor, int linha, int coluna) {
+			switch(coluna) {
+			case 0:
+				dados.get(linha).setNome((String) valor);
+				break;
+			case 1:
+				dados.get(linha).setTipoConvidado((String) valor);
+				break;
+			case 2:
+				dados.get(linha).setIdade(Integer.parseInt((String) valor));
+				break;
+			case 3:
+				dados.get(linha).setNumTelefone(Long.parseLong((String) valor));		
+				break;
+			}		
+			this.fireTableRowsUpdated(linha, linha);
+		}
+		
 		public void addLinha(Convidados c) {			
 			this.dados.add(c);
 			this.fireTableDataChanged();

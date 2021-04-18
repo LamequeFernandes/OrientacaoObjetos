@@ -39,6 +39,19 @@ public class ControladorTarefas extends AbstractTableModel{
 			return null;
 		}
 		
+		@Override
+		public void setValueAt(Object valor, int linha, int coluna) {
+			switch(coluna) {
+			case 0:
+				dados.get(linha).setDescricaoTarefa((String) valor);
+				break;
+			case 1:
+				dados.get(linha).setPrioridadeTarefa((String) valor);
+				break;
+			}		
+			this.fireTableRowsUpdated(linha, linha);
+		}
+		
 		public void addLinha(Tarefas t) {			
 			this.dados.add(t);
 			this.fireTableDataChanged();
