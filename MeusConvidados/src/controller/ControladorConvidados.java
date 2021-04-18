@@ -2,39 +2,54 @@ package controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
 import javax.swing.table.AbstractTableModel;
 
 import modelo.Convidados;
 
-import javax.swing.JTextField;
 
-public class ControladorConvidados {
-//		Convidados c = new Convidados();
-
+public class ControladorConvidados extends AbstractTableModel{
+	
+		private List<Convidados> dados = new ArrayList<>();
+		private String[] colunas = {"Nome", "Tipo", "Idade", "Telefone"};
 		
-		
-		
-		
-/*	ArrayList<Convidados> listaConvidados = new ArrayList<>();
-
-	Scanner ler = new Scanner(System.in);
-
-	public ControladorConvidados() {
-	}
-
-	public boolean cadastrarConvidado(String nome, String idadee, String telefone, String sexo,
-			String tipoConvidado) {
-		if (nome != null && nome.length() > 0 && idadee != null && idadee.length() > 0 && telefone != null
-				&& telefone.length() > 0 && sexo != null && sexo.length() > 0 && tipoConvidado != null
-				&& tipoConvidado.length() > 0) {
-			Convidados convidados = new Convidados(nome, idadee, telefone, sexo, tipoConvidado);
-			convidados.cadastrarConvidados(convidados);
-			return true;
+		@Override
+		public String getColumnName(int column) {
+			return colunas[column];
 		}
-		return false;
-	}
-*/	
+		
+		@Override
+		public int getRowCount() {
+			return dados.size();
+		}
 
-}
+		@Override
+		public int getColumnCount() {
+			return colunas.length;
+		}
+
+		@Override
+		public Object getValueAt(int linha, int coluna) {
+			
+			switch(coluna) {
+				case 0:
+					return dados.get(linha).getNome();
+				case 1:
+					return dados.get(linha).getTipoConvidado();
+				case 2:
+					return dados.get(linha).getIdade();
+				case 3:
+					return dados.get(linha).getNumTelefone();				
+			}			
+			return null;
+		}
+		
+		public void addLinha(Convidados c) {			
+			this.dados.add(c);
+			this.fireTableDataChanged();
+		}		
+		
+		public void removeLinha(int linha){
+	        this.dados.remove(linha);
+	        this.fireTableRowsDeleted(linha, linha);
+	    }
+	}

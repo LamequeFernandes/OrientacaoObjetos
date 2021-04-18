@@ -1,7 +1,7 @@
 package view;
 
 import controller.ControladorConvidados;
-import controller.TableConvidados;
+import controller.ControladorConvidados;
 import modelo.Convidados;
 
 import javax.swing.JPanel;
@@ -29,7 +29,7 @@ public class TelaConvidados extends JPanel {
 	private JTable table;
 //	private javax.swing.JScrollPane jScrollPane1;
 	
-	TableConvidados tableModel = new TableConvidados();
+	ControladorConvidados tableModel = new ControladorConvidados();
 	private JTextField txtNome;
 	private JTextField txtTelefone;
 	private JTextField txtIdade;
@@ -128,9 +128,16 @@ public class TelaConvidados extends JPanel {
 		});
 		add(botaoAdicionar);		
 		
-		JButton botaoExcluir = new JButton("Excluir");
-		botaoExcluir.setBounds(475, 127, 162, 25);
-		add(botaoExcluir);
+		JButton botaoRemover = new JButton("Remover");
+		botaoRemover.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(jTConvidados.getSelectedRow() != -1) {
+					tableModel.removeLinha(jTConvidados.getSelectedRow());
+				}
+			}
+		});
+		botaoRemover.setBounds(475, 127, 162, 25);
+		add(botaoRemover);
 		
 		JButton botaoEditar = new JButton("Editar");
 		botaoEditar.setBounds(475, 174, 162, 25);

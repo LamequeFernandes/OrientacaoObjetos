@@ -102,9 +102,16 @@ public class TelaGastos extends JPanel {
 		});
 		add(botaoAdicionar);		
 		
-		JButton botaoExcluir = new JButton("Excluir");
-		botaoExcluir.setBounds(475, 127, 162, 25);
-		add(botaoExcluir);
+		JButton botaoRemover = new JButton("Remover");
+		botaoRemover.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(jTGastos.getSelectedRow() != -1) {
+					tableModel.removeLinha(jTGastos.getSelectedRow());
+				}
+			}
+		});
+		botaoRemover.setBounds(475, 127, 162, 25);
+		add(botaoRemover);
 		
 		JButton botaoEditar = new JButton("Editar");
 		botaoEditar.setBounds(475, 174, 162, 25);

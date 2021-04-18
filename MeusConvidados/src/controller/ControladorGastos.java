@@ -44,5 +44,10 @@ public class ControladorGastos extends AbstractTableModel{
 		public void addLinha(Gastos g) {			
 			this.dados.add(g);
 			this.fireTableDataChanged();
-		}		
+		}	
+		
+		public void removeLinha(int linha){
+	        this.dados.remove(linha);
+	        this.fireTableRowsDeleted(linha, linha);
+	    }
 	}

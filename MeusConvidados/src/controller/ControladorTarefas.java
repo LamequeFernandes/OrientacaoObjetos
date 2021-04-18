@@ -42,5 +42,10 @@ public class ControladorTarefas extends AbstractTableModel{
 		public void addLinha(Tarefas t) {			
 			this.dados.add(t);
 			this.fireTableDataChanged();
-		}		
+		}	
+		
+		public void removeLinha(int linha){
+	        this.dados.remove(linha);
+	        this.fireTableRowsDeleted(linha, linha);
+	    }
 	}
