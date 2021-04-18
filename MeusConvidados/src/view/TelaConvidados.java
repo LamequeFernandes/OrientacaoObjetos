@@ -23,6 +23,8 @@ import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class TelaConvidados extends JPanel {
 	private JTable jTConvidados;
@@ -48,6 +50,7 @@ public class TelaConvidados extends JPanel {
 		add(lblTitulo);
 		
 		JScrollPane scroll = new JScrollPane();
+				
 		scroll.setBounds(28, 211, 611, 225);
 		add(scroll);
 		
@@ -65,6 +68,18 @@ public class TelaConvidados extends JPanel {
 	        ));
 		scroll.setViewportView(jTConvidados);
 		jTConvidados.setModel(tableModel);
+		jTConvidados.getColumnModel().getColumn(0).setPreferredWidth(280);
+		jTConvidados.getColumnModel().getColumn(1).setPreferredWidth(100);
+		jTConvidados.getColumnModel().getColumn(2).setPreferredWidth(80);
+		jTConvidados.getColumnModel().getColumn(3).setPreferredWidth(150);		
+		
+		jTConvidados.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int linha = jTConvidados.getSelectedRow();
+				
+			}
+		});
 		
 		txtNome = new JTextField();
 		txtNome.setBounds(28, 82, 309, 19);

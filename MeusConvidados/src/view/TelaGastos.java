@@ -65,6 +65,9 @@ public class TelaGastos extends JPanel {
 	        ));
 		scroll.setViewportView(jTGastos);
 		jTGastos.setModel(tableModel);
+		jTGastos.getColumnModel().getColumn(0).setPreferredWidth(320);
+		jTGastos.getColumnModel().getColumn(1).setPreferredWidth(100);
+		jTGastos.getColumnModel().getColumn(2).setPreferredWidth(191);
 		
 		txtDescricao = new JTextField();
 		txtDescricao.setBounds(28, 87, 309, 35);

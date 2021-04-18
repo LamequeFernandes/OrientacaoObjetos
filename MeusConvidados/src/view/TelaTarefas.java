@@ -64,6 +64,8 @@ public class TelaTarefas extends JPanel {
 	        ));
 		scroll.setViewportView(jTTarefas);
 		jTTarefas.setModel(tableModel);
+		jTTarefas.getColumnModel().getColumn(0).setPreferredWidth(450);
+		jTTarefas.getColumnModel().getColumn(1).setPreferredWidth(161);
 		
 		txtDescricao = new JTextField();
 		txtDescricao.setBounds(28, 82, 309, 83);

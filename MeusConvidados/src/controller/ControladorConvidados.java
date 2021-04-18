@@ -38,7 +38,7 @@ public class ControladorConvidados extends AbstractTableModel{
 				case 2:
 					return dados.get(linha).getIdade();
 				case 3:
-					return dados.get(linha).getNumTelefone();				
+					return dados.get(linha).getNumTelefone();	
 			}			
 			return null;
 		}

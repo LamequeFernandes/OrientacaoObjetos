@@ -9,8 +9,8 @@ public class Evento {
 	private String nomeEvento;
 	private String tipoEvento;
 	private Status status;
-	private int dataEvento;
-	private int horarioInicio;
+	private String dataEvento;
+	private String horarioInicio;
 	private String anotacoes;
 	private int parar;
 //	private ArrayList<Convidados> listaConvidados = new ArrayList<Convidados>();
@@ -26,7 +26,7 @@ public class Evento {
 	
 	public Evento() {}
 
-	public Evento(String nomeEvento, String tipoEvento, Status status, int dataEvento, int horarioInicio,
+	public Evento(String nomeEvento, String tipoEvento, Status status, String dataEvento, String horarioInicio,
 			String anotacoes, Convidados convidados) {
 		this.nomeEvento = nomeEvento;
 		this.tipoEvento = tipoEvento;
@@ -69,20 +69,20 @@ public class Evento {
 		this.status = status;
 
 	}
-
-	public int getDataEvento() {
+	
+	public String getDataEvento() {
 		return dataEvento;
 	}
 
-	public void setDataEvento(int dataEvento) {
+	public void setDataEvento(String dataEvento) {
 		this.dataEvento = dataEvento;
 	}
 
-	public int getHorarioInicio() {
+	public String getHorarioInicio() {
 		return horarioInicio;
 	}
 
-	public void setHorarioInicio(int horarioInicio) {
+	public void setHorarioInicio(String horarioInicio) {
 		this.horarioInicio = horarioInicio;
 	}
 
@@ -121,7 +121,7 @@ public class Evento {
 		System.out.print("Digite, apenas com numeros, o mes do Evento: ");
 		int mes = ler.nextInt();
 		System.out.print("Digite, apenas a HORA, que ocorrera o evento: ");
-		setHorarioInicio(ler.nextInt());
+		setHorarioInicio(ler.nextLine());
 		System.out.println("Campo p/adicionar anotacoes sobre o evento: ");
 		setAnotacoes(ler.nextLine());
 		setAnotacoes(ler.nextLine());
