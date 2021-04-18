@@ -6,6 +6,9 @@ public class Gastos {
 	//atributos
 	private String descricaoGasto;
 	private double valorGasto;
+	private String FormaPagamento;
+	
+
 	private String[] gastosCadastrados = new String[30];
 	private int numGastos;
 
@@ -15,6 +18,14 @@ public class Gastos {
 	public Gastos() {}
 
 	//gets e sets
+	public String getFormaPagamento() {
+		return FormaPagamento;
+	}
+
+	public void setFormaPagamento(String formaPagamento) {
+		FormaPagamento = formaPagamento;
+	}
+	
 	public int getNumGastos() {
 		return numGastos;
 	}

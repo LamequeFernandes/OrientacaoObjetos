@@ -26,7 +26,7 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 
 public class TelaTarefas extends JPanel {
-	private JTable jTConvidados;
+	private JTable jTTarefas;
 	private JTable table;
 //	private javax.swing.JScrollPane jScrollPane1;
 	
@@ -50,8 +50,8 @@ public class TelaTarefas extends JPanel {
 		scroll.setBounds(28, 211, 611, 225);
 		add(scroll);
 		
-		jTConvidados = new JTable();
-		jTConvidados.setModel(new javax.swing.table.DefaultTableModel(
+		jTTarefas = new JTable();
+		jTTarefas.setModel(new javax.swing.table.DefaultTableModel(
 	            new Object [][] {
 	                {null, null, null, null},
 	                {null, null, null, null},
@@ -62,8 +62,8 @@ public class TelaTarefas extends JPanel {
 	                "Title 1", "Title 2", "Title 3", "Title 4"
 	            }
 	        ));
-		scroll.setViewportView(jTConvidados);
-		jTConvidados.setModel(tableModel);
+		scroll.setViewportView(jTTarefas);
+		jTTarefas.setModel(tableModel);
 		
 		txtDescricao = new JTextField();
 		txtDescricao.setBounds(28, 82, 309, 83);
