@@ -30,6 +30,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+//JPanel para organizar os dados dos convidados de forma mais visual.
+
 public class TelaConvidados extends JPanel {
 	private JTable jTConvidados;
 	private JTable table;
@@ -61,7 +63,6 @@ public class TelaConvidados extends JPanel {
 		setVisible(true);
 		setLayout(null);	
 		
-	//	e = new Evento();
 		eventoCompoBoxModel = new EventoCompoBoxModel();
 		
 		JLabel lblTitulo = new JLabel("Lista de convidados\n");
@@ -94,7 +95,6 @@ public class TelaConvidados extends JPanel {
 		jTConvidados.getColumnModel().getColumn(1).setPreferredWidth(90);
 		jTConvidados.getColumnModel().getColumn(2).setPreferredWidth(70);
 		jTConvidados.getColumnModel().getColumn(3).setPreferredWidth(110);
-	//	jTConvidados.getColumnModel().getColumn(4).setPreferredWidth(140);	
 		
 		txtNome = new JTextField();
 		txtNome.setBounds(28, 70, 309, 19);

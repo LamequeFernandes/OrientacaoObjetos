@@ -10,6 +10,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 
+//JPanel para apresentar o software
+
 public class TelaInicio extends JPanel {
 
 	public TelaInicio() {

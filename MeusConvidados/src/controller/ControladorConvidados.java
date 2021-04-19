@@ -7,11 +7,11 @@ import javax.swing.table.AbstractTableModel;
 import modelo.Convidados;
 import modelo.Evento;
 
+//organiza os dados obtidos da model Convidados na JTable
 
 public class ControladorConvidados extends AbstractTableModel{
 	
 		private List<Convidados> dados = new ArrayList<>();
-//		private List<Evento> dadosEvento = new ArrayList<>();
 		
 		private String[] colunas = {"Nome", "Tipo", "Idade", "Telefone"};
 		
@@ -42,9 +42,7 @@ public class ControladorConvidados extends AbstractTableModel{
 					return dados.get(linha).getIdade();
 				case 3:
 					return dados.get(linha).getNumTelefone();	
-/*				case 4:
-					return dadosEvento.get(linha).getNomeEvento();
-*/			}			
+			}			
 			return null;
 		}
 		
@@ -62,11 +60,7 @@ public class ControladorConvidados extends AbstractTableModel{
 				break;
 			case 3:
 				dados.get(linha).setNumTelefone(Long.parseLong((String) valor));		
-				break;
-	/*		case 4:
-				dadosEvento.get(linha).setNomeEvento((String) valor);
-				break;
-*/
+				break;	
 			}		
 			this.fireTableRowsUpdated(linha, linha);
 		}

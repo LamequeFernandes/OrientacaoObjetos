@@ -6,6 +6,7 @@ import javax.swing.table.AbstractTableModel;
 
 import modelo.Tarefas;
 
+//organiza os dados obtidos da model tarefas na JTable
 
 public class ControladorTarefas extends AbstractTableModel{
 	

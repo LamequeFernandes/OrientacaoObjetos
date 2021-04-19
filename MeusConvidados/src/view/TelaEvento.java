@@ -26,6 +26,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
+//JPanel para organizar os dados de eventos de forma mais visual.
+
 public class TelaEvento extends JPanel {
 	private JTable jTEvento;
 	private JTable table;

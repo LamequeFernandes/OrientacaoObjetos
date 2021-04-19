@@ -1,8 +1,6 @@
 package view;
 
 import controller.ControladorGastos;
-import controller.TableModelGeral;
-import controller.ControladorConvidados;
 import modelo.Convidados;
 import modelo.Evento;
 import modelo.Gastos;
@@ -31,15 +29,16 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 
+//JPanel para organizar os dados de gastos de forma mais visual.
+
 public class TelaGastos extends JPanel {
 	private JTable jTGastos;
+	private JTable table;
 	private JTextField txtDescricao;
 	private JTextField txtValor;
 	private JComboBox comboBoxSelecionarEvento;
 	ControladorGastos tableModel = new ControladorGastos();
-	TableModelGeral tableGeral = new TableModelGeral();
 	ArrayList<Evento> eventoArray;	
-	private JTable table_1;
 	
 	public TelaGastos(ArrayList listaEvento) {
     
@@ -69,7 +68,7 @@ public class TelaGastos extends JPanel {
 		add(lblTitulo);
 		
 		JScrollPane scroll = new JScrollPane();
-		scroll.setBounds(28, 220, 407, 216);
+		scroll.setBounds(28, 220, 611, 216);
 		add(scroll);
 		
 		jTGastos = new JTable();
@@ -86,9 +85,9 @@ public class TelaGastos extends JPanel {
 	        ));
 		scroll.setViewportView(jTGastos);
 		jTGastos.setModel(tableModel);
-//		jTGastos.getColumnModel().getColumn(0).setPreferredWidth(320);
-//		jTGastos.getColumnModel().getColumn(1).setPreferredWidth(100);
-//		jTGastos.getColumnModel().getColumn(2).setPreferredWidth(191);
+		jTGastos.getColumnModel().getColumn(0).setPreferredWidth(320);
+		jTGastos.getColumnModel().getColumn(1).setPreferredWidth(100);
+		jTGastos.getColumnModel().getColumn(2).setPreferredWidth(191);
 		
 		txtDescricao = new JTextField();
 		txtDescricao.setBounds(28, 87, 309, 35);
@@ -114,41 +113,18 @@ public class TelaGastos extends JPanel {
 		comboBoxSelecionarEvento.setBounds(88, 190, 249, 19);
 		add(comboBoxSelecionarEvento);
 		
-
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(434, 220, 199, 216);
-		add(scrollPane);	
-		table_1 = new JTable();		
-		table_1.setModel(new javax.swing.table.DefaultTableModel(
-	            new Object [][] {
-	                {null, null, null, null},
-	                {null, null, null, null},
-	                {null, null, null, null},
-	                {null, null, null, null}
-	            },
-	            new String [] {
-	                "Title 1", "Title 2", "Title 3", "Title 4"
-	            }
-	        ));			
-		scrollPane.setViewportView(table_1);
-		table_1.setModel(tableGeral);
-		
 		JButton botaoAdicionar = new JButton("Adicionar");
 		botaoAdicionar.setBounds(475, 79, 162, 25);
 		botaoAdicionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String pagamento = boxFormaPagamento.getSelectedItem().toString();
-				String selecaoEvento = comboBoxSelecionarEvento.getSelectedItem().toString();
 				Gastos g = new Gastos();
-				Evento e = new Evento();
 				
 				g.setDescricaoGasto(txtDescricao.getText());
 				g.setValorGasto(Double.parseDouble(txtValor.getText()));
 		        g.setFormaPagamento(pagamento);
-		        e.setNomeEvento(selecaoEvento);
 		        
 		        tableModel.addLinha(g);
-		        tableGeral.addLinha(e);
 		        JOptionPane.showMessageDialog(null, "Gasto cadastrado com sucesso!");			
 			}
 		});
@@ -192,10 +168,7 @@ public class TelaGastos extends JPanel {
 		lblEvento.setBounds(28, 193, 70, 15);
 		add(lblEvento);		
 			
-		
 	}
-	
-	
 	private String[] getListModel() {
         String[] stringEvento = new String[eventoArray.size()];
 

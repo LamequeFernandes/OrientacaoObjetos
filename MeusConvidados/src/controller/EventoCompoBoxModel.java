@@ -8,6 +8,8 @@ import javax.swing.ComboBoxModel;
 
 import modelo.Evento;
 
+//class para facilitar na manipulação de JComboBox.
+
 public class EventoCompoBoxModel extends AbstractListModel implements ComboBoxModel{
 
 	

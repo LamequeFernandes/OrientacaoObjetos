@@ -6,7 +6,7 @@ public class Gastos{
 	//atributos
 	private String descricaoGasto;
 	private double valorGasto;
-	private String FormaPagamento;
+	private String formaPagamento;
 	
 
 	private String[] gastosCadastrados = new String[30];
@@ -19,11 +19,11 @@ public class Gastos{
 
 	//gets e sets
 	public String getFormaPagamento() {
-		return FormaPagamento;
+		return formaPagamento;
 	}
 
 	public void setFormaPagamento(String formaPagamento) {
-		FormaPagamento = formaPagamento;
+		this.formaPagamento = formaPagamento;
 	}
 	
 	public int getNumGastos() {
@@ -50,35 +50,4 @@ public class Gastos{
 		this.valorGasto = valorGasto;
 	}
 
-	//metodo para cadastrar gastos do evento
-	public void cadastrar() {
-		System.out.println(" ");
-		System.out.println("Digite a quantidade de gastos que deseja adicionar ao Evento(max. 30): ");
-		int itens = ler.nextInt();
-		if (itens <= 30) {
-			for (int contador = 0; contador < itens; contador++) {
-				System.out.println(" ");
-				System.out.println("Gasto " + (contador + 1) + ": ");
-				System.out.print("Nome do Gasto ou item: ");
-				System.out.print("Valor, com centavos: ");
-				setValorGasto(ler.nextDouble());
-
-				System.out.println(" ");
-				System.out.println("Item cadastrado com sucesso!");
-				System.out.println("----------------------------------------------------------------------");
-
-				setNumGastos(itens);
-			}
-		}
-	}
-
-	//metodo para mostrar lista de gastos
-	public void consultarGastosCadastrados() {
-		System.out.println(" ");
-		System.out.println("                 ------- Lista de Gastos -------     ");
-		System.out.println(" ");
-		for (int i = 0; i < getNumGastos(); i++) {
-			System.out.println((i + 1) + "-" + gastosCadastrados[i]);
-		}
-	}
 }

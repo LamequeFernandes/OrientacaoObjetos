@@ -30,6 +30,8 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 
+//JPanel para organizar os dados das tarefas de forma mais visual.
+
 public class TelaTarefas extends JPanel {
 	private JTable jTTarefas;
 	private JTable table;

@@ -7,11 +7,11 @@ import javax.swing.table.AbstractTableModel;
 import modelo.Evento;
 import modelo.Gastos;
 
+//organiza os dados obtidos da model gastos na JTable
 
 public class ControladorGastos extends AbstractTableModel{
 	
 		private List<Gastos> dados = new ArrayList<>();
-//		private List<Evento> dadosEvento = new ArrayList<>();
 
 		
 		private String[] colunas = {"Descrição", "Valor R$", "Forma de Pagamento"};
@@ -41,9 +41,7 @@ public class ControladorGastos extends AbstractTableModel{
 					return dados.get(linha).getValorGasto();	
 				case 2:
 					return dados.get(linha).getFormaPagamento();
-	/*			case 3:
-					return dados.get(linha).getNomeEvento();
-	*/		}			
+			}			
 			return null;
 		}
 		

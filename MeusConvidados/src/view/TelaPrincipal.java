@@ -21,6 +21,8 @@ import java.util.ArrayList;
 
 import javax.swing.UIManager;
 
+//JFrame principal, é fixo e serve principalmente para o menu principal e para apresentar as jPanels
+
 public class TelaPrincipal extends JFrame {
 
 	private JPanel TelaPrincipal;

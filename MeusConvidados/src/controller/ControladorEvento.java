@@ -6,6 +6,7 @@ import javax.swing.table.AbstractTableModel;
 
 import modelo.Evento;
 
+//organiza os dados obtidos da model Eventos na JTable
 
 public class ControladorEvento extends AbstractTableModel{
 	
