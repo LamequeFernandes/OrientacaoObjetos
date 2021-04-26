@@ -36,11 +36,9 @@ public class TelaTarefas extends JPanel {
 	private JTable jTTarefas;
 	private JTable table;
 	private JComboBox comboBoxSelecionarEvento;
+	private JTextField txtDescricao;
 	ControladorTarefas tableModel = new ControladorTarefas();
 	ArrayList<Evento> eventoArray;
-	
-
-	private JTextField txtDescricao;
 	
 	public TelaTarefas(ArrayList listaEvento) {
 		this.eventoArray = listaEvento;
@@ -62,14 +60,10 @@ public class TelaTarefas extends JPanel {
 		setBounds(0, 0, 668, 454);
 		setVisible(true);
 		setLayout(null);
-				
-		JLabel lblTitulo = new JLabel("Lista de Tarefas\n");
-		lblTitulo.setBounds(12, 12, 644, 35);
-		lblTitulo.setForeground(Color.BLACK);
-		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTitulo.setFont(new Font("Fira Code", Font.BOLD, 28));
-		add(lblTitulo);
 		
+		tituloPagina();
+		descricaoTarefa();
+					
 		JScrollPane scroll = new JScrollPane();
 		scroll.setBounds(28, 224, 611, 212);
 		add(scroll);
@@ -90,16 +84,7 @@ public class TelaTarefas extends JPanel {
 		jTTarefas.setModel(tableModel);
 		jTTarefas.getColumnModel().getColumn(0).setPreferredWidth(450);
 		jTTarefas.getColumnModel().getColumn(1).setPreferredWidth(161);
-		
-		txtDescricao = new JTextField();
-		txtDescricao.setBounds(28, 75, 309, 83);
-		add(txtDescricao);
-		txtDescricao.setColumns(10);
-		
-		JLabel lblDescricao = new JLabel("Descrição:");
-		lblDescricao.setBounds(28, 55, 222, 15);
-		add(lblDescricao);
-		
+				
 		JLabel lblPrioridade = new JLabel("Prioridade:");
 		lblPrioridade.setFont(new Font("Dialog", Font.BOLD, 13));
 		lblPrioridade.setBounds(28, 165, 91, 19);
@@ -159,6 +144,25 @@ public class TelaTarefas extends JPanel {
 		add(comboBoxSelecionarEvento);
 	}
 	
+	public void tituloPagina() {
+		JLabel lblTitulo = new JLabel("Lista de Tarefas\n");
+		lblTitulo.setBounds(12, 12, 644, 35);
+		lblTitulo.setForeground(Color.BLACK);
+		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitulo.setFont(new Font("Fira Code", Font.BOLD, 28));
+		add(lblTitulo);
+	}
+	
+	public void descricaoTarefa() {
+		txtDescricao = new JTextField();
+		txtDescricao.setBounds(28, 75, 309, 83);
+		add(txtDescricao);
+		txtDescricao.setColumns(10);
+		
+		JLabel lblDescricao = new JLabel("Descrição:");
+		lblDescricao.setBounds(28, 55, 222, 15);
+		add(lblDescricao);
+	}
 	
 	private String[] getListModel() {
         String[] stringEvento = new String[eventoArray.size()];

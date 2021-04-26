@@ -41,7 +41,7 @@ public class TelaEvento extends JPanel {
 	private JTextField txtAnotacoes;
 
 	public TelaEvento(ArrayList<Evento> listaEvento) {
-        //recebe a lista de filmes do Frame
+        //recebe a lista de eventos do Frame
         this.eventoArray = listaEvento;
         initComponents();        
     }
@@ -52,12 +52,11 @@ public class TelaEvento extends JPanel {
 		setVisible(true);
 		setLayout(null);
 				
-		JLabel lblTitulo = new JLabel("Lista de Eventos\n");
-		lblTitulo.setBounds(12, 12, 644, 35);
-		lblTitulo.setForeground(Color.BLACK);
-		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTitulo.setFont(new Font("Fira Code", Font.BOLD, 28));
-		add(lblTitulo);
+		tituloPagina();
+		nomeEvento();
+		data();
+		horario();
+		anotacoes();
 		
 		JScrollPane scroll = new JScrollPane();
 				
@@ -90,34 +89,7 @@ public class TelaEvento extends JPanel {
 				
 			}
 		});
-		
-		txtTitulo = new JTextField();
-		txtTitulo.setBounds(28, 82, 309, 19);
-		add(txtTitulo);
-		txtTitulo.setColumns(10);
-		
-		JLabel lblNome = new JLabel("Titulo:");
-		lblNome.setBounds(28, 62, 132, 15);
-		add(lblNome);
-		
-		txtData = new JTextField();
-		txtData.setBounds(28, 182, 148, 19);
-		add(txtData);
-		txtData.setColumns(10);
-		
-		JLabel lblData = new JLabel("Data:");
-		lblData.setBounds(28, 164, 132, 15);
-		add(lblData);
-		
-		JLabel lblHorario = new JLabel("Horario de Inicio:");
-		lblHorario.setBounds(188, 164, 149, 15);
-		add(lblHorario);
-		
-		txtHorario = new JTextField();
-		txtHorario.setBounds(188, 182, 149, 19);
-		add(txtHorario);
-		txtHorario.setColumns(10);
-		
+				
 		JLabel lblTipo = new JLabel("Tipo do Evento:");
 		lblTipo.setBounds(28, 113, 132, 17);
 		add(lblTipo);
@@ -177,7 +149,52 @@ public class TelaEvento extends JPanel {
 		});		
 		botaoEditar.setBounds(477, 228, 162, 25);
 		add(botaoEditar);			
+				
+	}
+	
+	public void tituloPagina() {
+		JLabel lblTitulo = new JLabel("Lista de Eventos\n");
+		lblTitulo.setBounds(12, 12, 644, 35);
+		lblTitulo.setForeground(Color.BLACK);
+		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitulo.setFont(new Font("Fira Code", Font.BOLD, 28));
+		add(lblTitulo);
+	}
+	
+	public void nomeEvento() {
+		txtTitulo = new JTextField();
+		txtTitulo.setBounds(28, 82, 309, 19);
+		add(txtTitulo);
+		txtTitulo.setColumns(10);
 		
+		JLabel lblNome = new JLabel("Titulo:");
+		lblNome.setBounds(28, 62, 132, 15);
+		add(lblNome);
+	}
+	
+	public void data() {
+		txtData = new JTextField();
+		txtData.setBounds(28, 182, 148, 19);
+		add(txtData);
+		txtData.setColumns(10);
+		
+		JLabel lblData = new JLabel("Data:");
+		lblData.setBounds(28, 164, 132, 15);
+		add(lblData);
+	}
+	
+	public void horario() {
+		JLabel lblHorario = new JLabel("Horario de Inicio:");
+		lblHorario.setBounds(188, 164, 149, 15);
+		add(lblHorario);
+		
+		txtHorario = new JTextField();
+		txtHorario.setBounds(188, 182, 149, 19);
+		add(txtHorario);
+		txtHorario.setColumns(10);
+	}
+	
+	public void anotacoes() {
 		JLabel lblAnotaes = new JLabel("Anotações:");
 		lblAnotaes.setBounds(28, 213, 148, 15);
 		add(lblAnotaes);
@@ -186,6 +203,6 @@ public class TelaEvento extends JPanel {
 		txtAnotacoes.setBounds(28, 232, 309, 33);
 		add(txtAnotacoes);
 		txtAnotacoes.setColumns(10);
-		
-	}	  
+	}
+	
 }

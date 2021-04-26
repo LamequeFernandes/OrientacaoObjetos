@@ -54,19 +54,17 @@ public class TelaGastos extends JPanel {
 
         });
     }
+
 	private void initComponents() {
 		setBackground(Color.WHITE);
 		setBounds(0, 0, 668, 454);
 		setVisible(true);
 		setLayout(null);
-				
-		JLabel lblTitulo = new JLabel("Lista de Gastos");
-		lblTitulo.setBounds(12, 12, 644, 35);
-		lblTitulo.setForeground(Color.BLACK);
-		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTitulo.setFont(new Font("Fira Code", Font.BOLD, 28));
-		add(lblTitulo);
 		
+		tituloPagina();
+		descricaoGasto();
+		valorGasto();
+						
 		JScrollPane scroll = new JScrollPane();
 		scroll.setBounds(28, 220, 611, 216);
 		add(scroll);
@@ -87,21 +85,11 @@ public class TelaGastos extends JPanel {
 		jTGastos.setModel(tableModel);
 		jTGastos.getColumnModel().getColumn(0).setPreferredWidth(320);
 		jTGastos.getColumnModel().getColumn(1).setPreferredWidth(100);
-		jTGastos.getColumnModel().getColumn(2).setPreferredWidth(191);
+		jTGastos.getColumnModel().getColumn(2).setPreferredWidth(191);				
 		
-		txtDescricao = new JTextField();
-		txtDescricao.setBounds(28, 87, 309, 35);
-		add(txtDescricao);
-		txtDescricao.setColumns(10);
-		
-		JLabel lblDescricao = new JLabel("Descrição do gasto:");
-		lblDescricao.setBounds(28, 68, 222, 15);
-		add(lblDescricao);
-		
-		JLabel lblValor = new JLabel("Valor total:");
-		lblValor.setFont(new Font("Dialog", Font.BOLD, 13));
-		lblValor.setBounds(28, 130, 91, 19);
-		add(lblValor);
+		JLabel lblFormaDoPagamento = new JLabel("Forma de Pagamento:");
+		lblFormaDoPagamento.setBounds(28, 160, 167, 15);
+		add(lblFormaDoPagamento);
 		
 		JComboBox boxFormaPagamento = new JComboBox();
 		boxFormaPagamento.setModel(new DefaultComboBoxModel(new String[] {"Débito", "Crédito", "Dinheiro"}));
@@ -155,20 +143,43 @@ public class TelaGastos extends JPanel {
 		botaoEditar.setBounds(475, 174, 162, 25);
 		add(botaoEditar);			
 		
+		JLabel lblEvento = new JLabel("Evento:");
+		lblEvento.setBounds(28, 193, 70, 15);
+		add(lblEvento);				
+	}
+	
+	public void tituloPagina() {
+		JLabel lblTitulo = new JLabel("Lista de Gastos");
+		lblTitulo.setBounds(12, 12, 644, 35);
+		lblTitulo.setForeground(Color.BLACK);
+		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitulo.setFont(new Font("Fira Code", Font.BOLD, 28));
+		add(lblTitulo);
+	}
+	
+	public void descricaoGasto() {
+		txtDescricao = new JTextField();
+		txtDescricao.setBounds(28, 87, 309, 35);
+		add(txtDescricao);
+		txtDescricao.setColumns(10);
+		
+		JLabel lblDescricao = new JLabel("Descrição do gasto:");
+		lblDescricao.setBounds(28, 68, 222, 15);
+		add(lblDescricao);
+	}
+	
+	public void valorGasto() {
 		txtValor = new JTextField();
 		txtValor.setBounds(117, 130, 220, 19);
 		add(txtValor);
 		txtValor.setColumns(10);
 		
-		JLabel lblFormaDoPagamento = new JLabel("Forma de Pagamento:");
-		lblFormaDoPagamento.setBounds(28, 160, 167, 15);
-		add(lblFormaDoPagamento);
-		
-		JLabel lblEvento = new JLabel("Evento:");
-		lblEvento.setBounds(28, 193, 70, 15);
-		add(lblEvento);		
-			
+		JLabel lblValor = new JLabel("Valor total:");
+		lblValor.setFont(new Font("Dialog", Font.BOLD, 13));
+		lblValor.setBounds(28, 130, 91, 19);
+		add(lblValor);
 	}
+	
 	private String[] getListModel() {
         String[] stringEvento = new String[eventoArray.size()];
 

@@ -63,14 +63,13 @@ public class TelaConvidados extends JPanel {
 		setVisible(true);
 		setLayout(null);	
 		
-		eventoCompoBoxModel = new EventoCompoBoxModel();
+		tituloPagina();
+		nome();
+		idade();
+		telefone();
+		sexo();
 		
-		JLabel lblTitulo = new JLabel("Lista de convidados\n");
-		lblTitulo.setBounds(12, 12, 644, 35);
-		lblTitulo.setForeground(Color.BLACK);
-		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTitulo.setFont(new Font("Fira Code", Font.BOLD, 28));
-		add(lblTitulo);
+		eventoCompoBoxModel = new EventoCompoBoxModel();
 		
 		JScrollPane scroll = new JScrollPane();
 				
@@ -94,43 +93,7 @@ public class TelaConvidados extends JPanel {
 		jTConvidados.getColumnModel().getColumn(0).setPreferredWidth(200);
 		jTConvidados.getColumnModel().getColumn(1).setPreferredWidth(90);
 		jTConvidados.getColumnModel().getColumn(2).setPreferredWidth(70);
-		jTConvidados.getColumnModel().getColumn(3).setPreferredWidth(110);
-		
-		txtNome = new JTextField();
-		txtNome.setBounds(28, 70, 309, 19);
-		add(txtNome);
-		txtNome.setColumns(10);
-		
-		JLabel lblNome = new JLabel("Nome:");
-		lblNome.setBounds(28, 54, 132, 15);
-		add(lblNome);
-		
-		txtTelefone = new JTextField();
-		txtTelefone.setBounds(28, 105, 148, 19);
-		add(txtTelefone);
-		txtTelefone.setColumns(10);
-		
-		JLabel lblTelefone = new JLabel("Telefone:");
-		lblTelefone.setBounds(28, 90, 132, 15);
-		add(lblTelefone);
-		
-		JLabel lblIdade = new JLabel("Idade:");
-		lblIdade.setBounds(188, 90, 70, 15);
-		add(lblIdade);
-		
-		txtIdade = new JTextField();
-		txtIdade.setBounds(188, 105, 149, 19);
-		add(txtIdade);
-		txtIdade.setColumns(10);
-		
-		JLabel lblSexo = new JLabel("Sexo:");
-		lblSexo.setBounds(189, 125, 115, 19);
-		add(lblSexo);
-		
-		JComboBox boxSexo = new JComboBox();
-		boxSexo.setModel(new DefaultComboBoxModel(new String[] { "Masculino", "Feminino", "Indefinido" }));
-		boxSexo.setBounds(189, 145, 148, 19);
-		add(boxSexo);
+		jTConvidados.getColumnModel().getColumn(3).setPreferredWidth(110);	
 		
 		JLabel lblTipo = new JLabel("Tipo:");
 		lblTipo.setBounds(29, 125, 132, 17);
@@ -195,10 +158,62 @@ public class TelaConvidados extends JPanel {
 		
 		JLabel lblEvento = new JLabel("Evento:");
 		lblEvento.setBounds(29, 172, 70, 15);
-		add(lblEvento);
-		
-		
+		add(lblEvento);		
 	}
+	
+	public void tituloPagina() {
+		JLabel lblTitulo = new JLabel("Lista de convidados\n");
+		lblTitulo.setBounds(12, 12, 644, 35);
+		lblTitulo.setForeground(Color.BLACK);
+		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitulo.setFont(new Font("Fira Code", Font.BOLD, 28));
+		add(lblTitulo);
+	}
+		
+	public void nome() {
+		txtNome = new JTextField();
+		txtNome.setBounds(28, 70, 309, 19);
+		add(txtNome);
+		txtNome.setColumns(10);
+		
+		JLabel lblNome = new JLabel("Nome:");
+		lblNome.setBounds(28, 54, 132, 15);
+		add(lblNome);
+	}
+	
+	public void telefone() {
+		txtTelefone = new JTextField();
+		txtTelefone.setBounds(28, 105, 148, 19);
+		add(txtTelefone);
+		txtTelefone.setColumns(10);
+		
+		JLabel lblTelefone = new JLabel("Telefone:");
+		lblTelefone.setBounds(28, 90, 132, 15);
+		add(lblTelefone);
+	}
+	
+	public void idade() {
+		JLabel lblIdade = new JLabel("Idade:");
+		lblIdade.setBounds(188, 90, 70, 15);
+		add(lblIdade);
+		
+		txtIdade = new JTextField();
+		txtIdade.setBounds(188, 105, 149, 19);
+		add(txtIdade);
+		txtIdade.setColumns(10);		
+	}
+	
+	public void sexo() {
+		JLabel lblSexo = new JLabel("Sexo:");
+		lblSexo.setBounds(189, 125, 115, 19);
+		add(lblSexo);
+		
+		JComboBox boxSexo = new JComboBox();
+		boxSexo.setModel(new DefaultComboBoxModel(new String[] { "Masculino", "Feminino", "Indefinido" }));
+		boxSexo.setBounds(189, 145, 148, 19);
+		add(boxSexo);
+	}
+	
 	private String[] getListModel() {
         String[] stringEvento = new String[eventoArray.size()];
 
