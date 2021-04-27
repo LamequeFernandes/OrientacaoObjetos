@@ -39,18 +39,21 @@ public class TelaTarefas extends JPanel {
 	private JTextField txtDescricao;
 	ControladorTarefas tableModel = new ControladorTarefas();
 	ArrayList<Evento> eventoArray;
-	
+		
+	/*
+	 * construtor que recebe a lista de eventos da tela eventos
+	 * adiciona um listener para monitorar quando o painel for setado
+	 * como visivel e atualiza o combo de eventos
+	*/
 	public TelaTarefas(ArrayList listaEvento) {
 		this.eventoArray = listaEvento;
-        initComponents();
-       
+        initComponents();       
         addComponentListener(new ComponentAdapter() {
             @Override
             public void componentShown(ComponentEvent e) {
                 super.componentShown(e);               
                 comboBoxSelecionarEvento.setModel(new DefaultComboBoxModel(getListModel()));
             }
-
         });
 	}
 	
@@ -164,6 +167,12 @@ public class TelaTarefas extends JPanel {
 		add(lblDescricao);
 	}
 	
+	/*
+     * Método que irá converter o arraylist de eventos
+     * em um vetor de strings
+     * 
+     * @return vetor de strings com o nome dos eventos
+     */
 	private String[] getListModel() {
         String[] stringEvento = new String[eventoArray.size()];
 

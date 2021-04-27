@@ -38,10 +38,14 @@ public class TelaGastos extends JPanel {
 	private JTextField txtValor;
 	private JComboBox comboBoxSelecionarEvento;
 	ControladorGastos tableModel = new ControladorGastos();
-	ArrayList<Evento> eventoArray;	
+	ArrayList<Evento> eventoArray;		
 	
-	public TelaGastos(ArrayList listaEvento) {
-    
+	/*
+	 * construtor que recebe a lista de eventos da tela eventos
+	 * adiciona um listener para monitorar quando o painel for setado
+	 * como visivel e atualiza o combo de eventos
+	*/
+	public TelaGastos(ArrayList listaEvento) {    
         this.eventoArray = listaEvento;
         initComponents();
        
@@ -180,6 +184,12 @@ public class TelaGastos extends JPanel {
 		add(lblValor);
 	}
 	
+	/*
+     * Método que irá converter o arraylist de eventos
+     * em um vetor de strings
+     * 
+     * @return vetor de strings com o nome dos eventos
+     */	
 	private String[] getListModel() {
         String[] stringEvento = new String[eventoArray.size()];
 

@@ -44,6 +44,12 @@ public class TelaConvidados extends JPanel {
 	ArrayList<Evento> eventoArray;	
 	ControladorConvidados tableModel = new ControladorConvidados();
 	
+	
+	/*
+	 * construtor que recebe a lista de eventos da tela eventos
+	 * adiciona um listener para monitorar quando o painel for setado
+	 * como visivel e atualiza o combo de eventos
+	*/
 	public TelaConvidados(ArrayList listaEvento) {       
         this.eventoArray = listaEvento;
         initComponents();        
@@ -214,6 +220,12 @@ public class TelaConvidados extends JPanel {
 		add(boxSexo);
 	}
 	
+	/*
+     * Método que irá converter o arraylist de eventos
+     * em um vetor de strings
+     * 
+     * @return vetor de strings com o nome dos eventos
+     */
 	private String[] getListModel() {
         String[] stringEvento = new String[eventoArray.size()];
 

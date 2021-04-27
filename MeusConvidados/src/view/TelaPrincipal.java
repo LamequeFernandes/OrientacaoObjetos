@@ -254,8 +254,11 @@ public class TelaPrincipal extends JFrame {
 		panel.setVisible(true);
 	}
 	
-	private class PanelButtonMouseAdapter extends MouseAdapter{
-		
+	/* 
+	 * 	adiciona funcionalidades ao mouse, como mudar de cor ao passar o mouse acima 
+	 *  de uma label.
+	 */	
+	private class PanelButtonMouseAdapter extends MouseAdapter{		
 		JPanel painel;
 		public PanelButtonMouseAdapter(JPanel painel) {
 			this.painel = painel;
