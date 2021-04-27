@@ -1,10 +1,16 @@
 package modelo;
 
+/**
+ * Defini os dados dos convidados implementado os gets e sets dos convidados
+ * 
+ * @author Lameque Fernandes
+ * @versão 1.0 (Abril 2021)
+ */
+
 import java.util.Scanner;
 
-public class Convidados  extends Pessoa{
-
-	// atributo
+public class Convidados  extends Pessoa{	
+	
 	private String tipoConvidado;
 	private Status status;
 	private int numConvidados;
@@ -18,6 +24,7 @@ public class Convidados  extends Pessoa{
 	}
 	// gets e sets
 	public int getNumConvidados() {
+		
 		return numConvidados;
 	}
 
@@ -74,46 +81,6 @@ public class Convidados  extends Pessoa{
 
 	public void setNumTelefone(long numTelefone) {
 		this.numTelefone = numTelefone;
-	}	
-	
+	}		
 
-	
-	// metodo para cadastrar convidados
-	public void cadastrar() {
-		System.out.println(" ");
-		System.out.println("Digite a quantidade de convidados que deseja adicionar(maximo de 30): ");
-		int pessoas = ler.nextInt();
-		if (pessoas <= 30) {
-			for (int contador = 0; contador < pessoas; contador++) {
-				System.out.println(" ");
-				System.out.println("Convidado " + (contador + 1) + ": ");
-				System.out.print("Nome do Convidado: ");
-				setNome(ler.nextLine(), contador);
-				setNome(ler.nextLine(), contador);
-				System.out.print("Tipo de convidado(exemplo: amigo, etc): ");
-				setTipoConvidado(ler.nextLine());
-				System.out.print("Idade do convidado: ");
-				setIdade(ler.nextInt());
-				System.out.print("Sexo do convidado: ");
-				setSexo(ler.next());
-				System.out.print("Telefone com DDD: ");
-				setNumTelefone(ler.nextLong());
-
-				System.out.println(" ");
-				System.out.println("Convidado cadastrado com sucesso!");
-				System.out.println("----------------------------------------------------------------------");
-
-				setNumConvidados(pessoas);
-			}
-		}
-	}
-	//metodo para mostrar lista de convidados
-	public void consultarConvidadosCadastrados() {
-		System.out.println(" ");
-		System.out.println("                 ------- Lista de convidados -------     ");
-		System.out.println(" ");
-		for (int i = 0; i < getNumConvidados(); i++) {
-			System.out.println((i + 1) + "-" + convidadosCadastrados[i]);
-		}
-	}
 }

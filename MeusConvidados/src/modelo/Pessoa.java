@@ -1,14 +1,18 @@
 package modelo;
 
+/**
+ * Determina que tipo de dados tera as pessoas(convidados) e são implementados atraves dos gets e sets
+ * 
+ * @author Lameque Fernandes
+ * @versão 1.0 (Abril 2021)
+ */
+
 public abstract class Pessoa {
-//apagar no futuro//////////////
+
 	protected int idade;
 	protected long numTelefone;
-///////////////////////////////
 	protected String nome;
 	protected String sexo;
-	protected String email;
-	protected String endereco;
 
 	public String getNome() {
 		return nome;
@@ -42,19 +46,4 @@ public abstract class Pessoa {
 		this.numTelefone = numTelefone;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
 }

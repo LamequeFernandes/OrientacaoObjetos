@@ -109,8 +109,9 @@ public class TelaEvento extends JPanel {
 				
 				e.setNomeEvento(txtTitulo.getText());				
 				e.setTipoEvento(tipoEvento);
-		        e.setDataEvento((txtData.getText()));
-		        e.setHorarioInicio(txtHorario.getText());
+		        e.setDataEvento((txtData.getText()));		        
+		        if(tableModel.validaHorario(e.getHorarioInicio()) == true)
+		        	e.setHorarioInicio(Integer.parseInt(txtHorario.getText()));
 		        
 		        tableModel.addLinha(e);
 		        eventoArray.add(e);
@@ -148,7 +149,11 @@ public class TelaEvento extends JPanel {
 			}
 		});		
 		botaoEditar.setBounds(477, 228, 162, 25);
-		add(botaoEditar);			
+		add(botaoEditar);
+		
+		JLabel lblHoras = new JLabel("horas");
+		lblHoras.setBounds(297, 184, 62, 15);
+		add(lblHoras);
 				
 	}
 	
@@ -189,7 +194,8 @@ public class TelaEvento extends JPanel {
 		add(lblHorario);
 		
 		txtHorario = new JTextField();
-		txtHorario.setBounds(188, 182, 149, 19);
+		txtHorario.setHorizontalAlignment(SwingConstants.TRAILING);
+		txtHorario.setBounds(188, 182, 105, 19);
 		add(txtHorario);
 		txtHorario.setColumns(10);
 	}
@@ -204,5 +210,4 @@ public class TelaEvento extends JPanel {
 		add(txtAnotacoes);
 		txtAnotacoes.setColumns(10);
 	}
-	
 }

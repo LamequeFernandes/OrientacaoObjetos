@@ -12,6 +12,7 @@ public class ControladorEvento extends AbstractTableModel{
 	
 		private List<Evento> dados = new ArrayList<>();
 		private String[] colunas = {"Evento", "Tipo", "Data", "Horario"};
+		Evento evento = new Evento();
 		
 		@Override
 		public String getColumnName(int column) {
@@ -57,7 +58,7 @@ public class ControladorEvento extends AbstractTableModel{
 				dados.get(linha).setDataEvento((String) valor);
 				break;
 			case 3:
-				dados.get(linha).setHorarioInicio((String) valor);		
+				dados.get(linha).setHorarioInicio((int) valor);		
 				break;
 			}		
 			this.fireTableRowsUpdated(linha, linha);
@@ -72,4 +73,15 @@ public class ControladorEvento extends AbstractTableModel{
 	        this.dados.remove(linha);
 	        this.fireTableRowsDeleted(linha, linha);
 	    }
+		
+		public boolean validaHorario(int horario) {
+			boolean aux = true;
+			evento.setHorarioInicio(horario);
+			if(evento.getHorarioInicio() < 0) 
+				aux = false;		
+			
+			if(evento.getHorarioInicio() > 24) 
+				aux = false;					
+			return aux;
+		}
 	}

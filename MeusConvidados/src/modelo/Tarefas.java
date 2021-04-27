@@ -1,5 +1,12 @@
 package modelo;
 
+/**
+ * Cria atributos para as tarefas que são implementadas atraves dos gets e sets
+ * 
+ * @author Lameque Fernandes
+ * @versão 1.0 (Abril 2021)
+ */
+
 import java.util.Scanner;
 
 public class Tarefas {

@@ -1,4 +1,10 @@
 package modelo;
+/**
+ * Defini os dados do evento implementado os gets e sets dos convidados
+ * 
+ * @versão 1.0 (Abril 2021)
+ * @author lameque
+ */
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,7 +16,7 @@ public class Evento {
 	private String tipoEvento;
 	private Status status;
 	private String dataEvento;
-	private String horarioInicio;
+	private int horarioInicio;
 	private String anotacoes;
 	private int parar;
 //	private ArrayList<Convidados> listaConvidados = new ArrayList<Convidados>();
@@ -26,7 +32,7 @@ public class Evento {
 	
 	public Evento() {}
 
-	public Evento(String nomeEvento, String tipoEvento, Status status, String dataEvento, String horarioInicio,
+	public Evento(String nomeEvento, String tipoEvento, Status status, String dataEvento, int horarioInicio,
 			String anotacoes, Convidados convidados) {
 		this.nomeEvento = nomeEvento;
 		this.tipoEvento = tipoEvento;
@@ -70,7 +76,7 @@ public class Evento {
 
 	}
 	
-	public String getDataEvento() {
+	public String getDataEvento() {		
 		return dataEvento;
 	}
 
@@ -78,11 +84,11 @@ public class Evento {
 		this.dataEvento = dataEvento;
 	}
 
-	public String getHorarioInicio() {
+	public int getHorarioInicio() {
 		return horarioInicio;
 	}
 
-	public void setHorarioInicio(String horarioInicio) {
+	public void setHorarioInicio(int horarioInicio) {
 		this.horarioInicio = horarioInicio;
 	}
 
@@ -98,6 +104,17 @@ public class Evento {
 	public String toString() {
 		return nomeEvento;
 	}
-
+	
+	public boolean validaHorario(int horario) {
+		boolean aux = true;
+		setHorarioInicio(horario);
+		if(getHorarioInicio() < 0) 
+			aux = false;		
+		
+		if(getHorarioInicio() > 24) 
+			aux = false;					
+		
+		return aux;
+	}
 	
 }
