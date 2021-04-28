@@ -10,8 +10,13 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 
-//JPanel para apresentar o software
 
+/**
+ * Apresenta o software ao usuario.
+ * 
+ * @Versão 1.0 (Abril 2021)
+ * @author Lameque Fernandes
+ */
 public class TelaInicio extends JPanel {
 
 	public TelaInicio() {
@@ -25,7 +30,9 @@ public class TelaInicio extends JPanel {
 		imagemInicio();
 	}
 	
-	//titulo do programa
+	/**
+	 * titulo do programa
+	 */
 	public void titulo() {
 		JLabel lblInicio = new JLabel("Auxiliar de Festas\n");
 		lblInicio.setBounds(12, 54, 644, 46);
@@ -35,7 +42,9 @@ public class TelaInicio extends JPanel {
 		add(lblInicio);		
 	}
 	
-	//Label para mensagem de bem-vindo
+	/**
+	 * Label para mensagem de bem-vindo
+	 */
 	public void mensagemBemVindo() {
 		JLabel lblOlSejaBemvindo = new JLabel("Olá, seja Bem-vindo!");
 		lblOlSejaBemvindo.setFont(new Font("Dialog", Font.BOLD, 16));
@@ -45,7 +54,9 @@ public class TelaInicio extends JPanel {
 		setVisible(true);
 	}
 	
-	// frases para explicar um pouco do que o programa faz
+	/**
+	 *  frases para explicar um pouco do que o programa faz
+	 */
 	public void frasesTelaInicial() {
 		JLabel lblOrganizeMelhorOs = new JLabel("Organize melhor o seu Evento");
 		lblOrganizeMelhorOs.setBounds(12, 201, 644, 33);
@@ -60,7 +71,9 @@ public class TelaInicio extends JPanel {
 		add(lblCadastreEditeOu);
 	}
 	
-	//Label para imagem da tela inicial
+	/**
+	 * Label para imagem da tela inicial
+	 */
 	public void imagemInicio() {
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);

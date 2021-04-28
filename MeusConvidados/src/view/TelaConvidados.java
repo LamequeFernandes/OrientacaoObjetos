@@ -30,8 +30,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-//JPanel para organizar os dados dos convidados de forma mais visual.
-
+/**
+ * Facilita a visualização do programa atraves de uma JPanel, que possibilita a visualização dos convidados cadastrados,
+ * além da possibilidade de cadastrar novos convidados, editar e remover.
+ * 
+ * @Versão 1.0 (Abril 2021)
+ * @author Lameque Fernandes
+ */
 public class TelaConvidados extends JPanel {
 	private JTable jTConvidados;
 	private JTable table;
@@ -45,11 +50,12 @@ public class TelaConvidados extends JPanel {
 	ControladorConvidados tableModel = new ControladorConvidados();
 	
 	
-	/*
-	 * construtor que recebe a lista de eventos da tela eventos
+	/**
+	 * Construtor que recebe a lista de eventos da tela eventos
 	 * adiciona um listener para monitorar quando o painel for setado
-	 * como visivel e atualiza o combo de eventos
-	*/
+	 * como visivel e atualiza o combo de eventos.<br>
+	 * @param listaEvento
+	 */
 	public TelaConvidados(ArrayList listaEvento) {       
         this.eventoArray = listaEvento;
         initComponents();        
@@ -63,6 +69,10 @@ public class TelaConvidados extends JPanel {
         });
     }
 	
+	/**
+	 * Criação de uma JTable para a melhor visualização da lista de Convidados.<br>
+	 * Também possui JComboBox e botões com eventos que possibilitão a adição, remoção e alteração de convidados.
+	 */
 	private void initComponents() {
 		setBackground(Color.WHITE);
 		setBounds(0, 0, 668, 454);
@@ -167,6 +177,7 @@ public class TelaConvidados extends JPanel {
 		add(lblEvento);		
 	}
 	
+	
 	public void tituloPagina() {
 		JLabel lblTitulo = new JLabel("Lista de convidados\n");
 		lblTitulo.setBounds(12, 12, 644, 35);
@@ -176,6 +187,9 @@ public class TelaConvidados extends JPanel {
 		add(lblTitulo);
 	}
 		
+	/**
+	 * Método para que seja possivel a digitação do Nome do Convidado
+	 */
 	public void nome() {
 		txtNome = new JTextField();
 		txtNome.setBounds(28, 70, 309, 19);
@@ -187,6 +201,9 @@ public class TelaConvidados extends JPanel {
 		add(lblNome);
 	}
 	
+	/**
+	 * Método para que possibilita a digitação do número de telefone
+	 */
 	public void telefone() {
 		txtTelefone = new JTextField();
 		txtTelefone.setBounds(28, 105, 148, 19);
@@ -198,6 +215,9 @@ public class TelaConvidados extends JPanel {
 		add(lblTelefone);
 	}
 	
+	/**
+	 * Método que possibilita a digitação da idade
+	 */
 	public void idade() {
 		JLabel lblIdade = new JLabel("Idade:");
 		lblIdade.setBounds(188, 90, 70, 15);
@@ -209,6 +229,9 @@ public class TelaConvidados extends JPanel {
 		txtIdade.setColumns(10);		
 	}
 	
+	/**
+	 * Método que possibilita a seleção do sexo do Convidado
+	 */
 	public void sexo() {
 		JLabel lblSexo = new JLabel("Sexo:");
 		lblSexo.setBounds(189, 125, 115, 19);
@@ -220,7 +243,7 @@ public class TelaConvidados extends JPanel {
 		add(boxSexo);
 	}
 	
-	/*
+	/**
      * Método que irá converter o arraylist de eventos
      * em um vetor de strings
      * 

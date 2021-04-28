@@ -29,8 +29,13 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 
-//JPanel para organizar os dados de gastos de forma mais visual.
-
+/**
+ * Facilita a visualização do programa atraves de uma JPanel, que possibilita a visualização dos Gastos cadastrados,
+ * além da possibilidade de cadastrar novos gastos, editar e remover.
+ * 
+ * @Versão 1.0 (Abril 2021)
+ * @author Lameque Fernandes
+ */
 public class TelaGastos extends JPanel {
 	private JTable jTGastos;
 	private JTable table;
@@ -40,11 +45,12 @@ public class TelaGastos extends JPanel {
 	ControladorGastos tableModel = new ControladorGastos();
 	ArrayList<Evento> eventoArray;		
 	
-	/*
-	 * construtor que recebe a lista de eventos da tela eventos
+	/**
+	 * Construtor que recebe a lista de eventos da tela eventos
 	 * adiciona um listener para monitorar quando o painel for setado
-	 * como visivel e atualiza o combo de eventos
-	*/
+	 * como visivel e atualiza o combo de eventos.
+	 * @param listaEvento
+	 */
 	public TelaGastos(ArrayList listaEvento) {    
         this.eventoArray = listaEvento;
         initComponents();
@@ -59,6 +65,10 @@ public class TelaGastos extends JPanel {
         });
     }
 
+	/**
+	 * Criação de uma JTable para a melhor visualização da lista de Gastos.<br>
+	 * Também possui JComboBox e botões com eventos que possibilitão a adição, remoção e alteração de Gastos.
+	 */
 	private void initComponents() {
 		setBackground(Color.WHITE);
 		setBounds(0, 0, 668, 454);
@@ -161,6 +171,9 @@ public class TelaGastos extends JPanel {
 		add(lblTitulo);
 	}
 	
+	/**
+	 * Possibilita a digitação na área de descrição do Gasto.
+	 */
 	public void descricaoGasto() {
 		txtDescricao = new JTextField();
 		txtDescricao.setBounds(28, 87, 309, 35);
@@ -172,6 +185,9 @@ public class TelaGastos extends JPanel {
 		add(lblDescricao);
 	}
 	
+	/**
+	 * Necessario para digitar o valor.
+	 */
 	public void valorGasto() {
 		txtValor = new JTextField();
 		txtValor.setBounds(117, 130, 220, 19);
@@ -184,7 +200,7 @@ public class TelaGastos extends JPanel {
 		add(lblValor);
 	}
 	
-	/*
+	/**
      * Método que irá converter o arraylist de eventos
      * em um vetor de strings
      * 

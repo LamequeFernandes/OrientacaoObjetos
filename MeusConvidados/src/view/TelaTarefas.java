@@ -30,8 +30,13 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 
-//JPanel para organizar os dados das tarefas de forma mais visual.
-
+/**
+ * Facilita a visualização do programa atraves de uma JPanel, que possibilita a visualização das tarefas cadastradas,
+ * além da possibilidade de cadastrar novas tarefas, editar e remover.
+ * 
+ * @Versão 1.0 (Abril 2021)
+ * @author Lameque Fernandes
+ */
 public class TelaTarefas extends JPanel {
 	private JTable jTTarefas;
 	private JTable table;
@@ -40,11 +45,12 @@ public class TelaTarefas extends JPanel {
 	ControladorTarefas tableModel = new ControladorTarefas();
 	ArrayList<Evento> eventoArray;
 		
-	/*
-	 * construtor que recebe a lista de eventos da tela eventos
+	/**
+	 * Construtor que recebe a lista de eventos da tela eventos
 	 * adiciona um listener para monitorar quando o painel for setado
-	 * como visivel e atualiza o combo de eventos
-	*/
+	 * como visivel e atualiza o combo de eventos.
+	 * @param listaEvento
+	 */
 	public TelaTarefas(ArrayList listaEvento) {
 		this.eventoArray = listaEvento;
         initComponents();       
@@ -57,6 +63,10 @@ public class TelaTarefas extends JPanel {
         });
 	}
 	
+	/**
+	 * Criação de uma JTable para a melhor visualização da lista de Tarefas.<br>
+	 * Também possui JComboBox e botões com eventos que possibilitão a adição, remoção e alteração de Tarefas.
+	 */
 	private void initComponents() {
 
 		setBackground(Color.WHITE);
@@ -156,6 +166,9 @@ public class TelaTarefas extends JPanel {
 		add(lblTitulo);
 	}
 	
+	/**
+	 * Área de digitação para que seja possivel descrever a tarefa atribuida ao evento.
+	 */
 	public void descricaoTarefa() {
 		txtDescricao = new JTextField();
 		txtDescricao.setBounds(28, 75, 309, 83);
@@ -167,7 +180,7 @@ public class TelaTarefas extends JPanel {
 		add(lblDescricao);
 	}
 	
-	/*
+	/**
      * Método que irá converter o arraylist de eventos
      * em um vetor de strings
      * 

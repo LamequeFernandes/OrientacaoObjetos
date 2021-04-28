@@ -1,14 +1,5 @@
 package controller;
 
-/**
- * Organiza e controla de modo eficiente os dados dos Gastos e guarda-os em modelo de tabela. <br>
- * Além de cadastrar, editar e remover Gastos
- * 
- * @Versão 1.0 (Abril 2021)
- * @author Lameque Fernandes
- */
-
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
@@ -16,6 +7,13 @@ import javax.swing.table.AbstractTableModel;
 import modelo.Evento;
 import modelo.Gastos;
 
+/**
+ * Organiza e controla de modo eficiente os dados dos Gastos e guarda-os em modelo de tabela. <br>
+ * Além de cadastrar, editar e remover Gastos
+ * 
+ * @Versão 1.0 (Abril 2021)
+ * @author Lameque Fernandes
+ */
 public class ControladorGastos extends AbstractTableModel{
 	
 		private List<Gastos> dados = new ArrayList<>();

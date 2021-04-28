@@ -1,4 +1,9 @@
 package controller;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.AbstractTableModel;
+
+import modelo.Evento;
 
 /**
  * Organiza e controla de modo eficiente os dados dos Eventos e guarda-os em modelo de tabela.<br>
@@ -7,14 +12,6 @@ package controller;
  * @Versão 1.0 (Abril 2021)
  * @author Lameque Fernandes
  */
-
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.table.AbstractTableModel;
-
-import modelo.Evento;
-
-
 public class ControladorEvento extends AbstractTableModel{
 	
 		private List<Evento> dados = new ArrayList<>();

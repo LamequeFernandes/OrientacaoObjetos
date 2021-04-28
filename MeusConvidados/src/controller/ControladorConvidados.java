@@ -1,12 +1,5 @@
 package controller;
 
-/**
- * Organiza e controla de modo eficiente os dados dos convidados e guarda-os em modelo de tabela.<br>
- * Além de cadastrar, editar e remover Convidados
- * 
- * @Versão 1.0 (Abril 2021)
- * @author Lameque Fernandes
- */
 		
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +9,13 @@ import modelo.Convidados;
 import modelo.Evento;
 
 
+/**
+ * Organiza e controla de modo eficiente os dados dos convidados e guarda-os em modelo de tabela.,<br>
+ * Além de cadastrar, editar e remover Convidados
+ * 
+ * @Versão 1.0 (Abril 2021)
+ * @author Lameque Fernandes
+ */
 public class ControladorConvidados extends AbstractTableModel{
 	
 		private List<Convidados> dados = new ArrayList<>();

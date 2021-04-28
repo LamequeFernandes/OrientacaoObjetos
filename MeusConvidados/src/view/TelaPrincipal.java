@@ -21,7 +21,14 @@ import java.util.ArrayList;
 
 import javax.swing.UIManager;
 
-//JFrame principal, é fixo e serve principalmente para o menu principal e para apresentar as jPanels
+/**
+ * Tela Principal do programa.<br>
+ * JFrame em que o menu principal está estabelecido e a partir do mesmo pode-se acessar 
+ * as demais "abas" do software.
+ * 
+ * @version 1.0 (Abril 2021)
+ * @author Lameque Fernandes
+ */
 
 public class TelaPrincipal extends JFrame {
 
@@ -33,6 +40,10 @@ public class TelaPrincipal extends JFrame {
 	private TelaGastos telaGastos;
 	private ArrayList<Evento> eventoArray = new ArrayList<>();
 	
+	/**
+	 * Torna possivel a execução do software.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -46,6 +57,10 @@ public class TelaPrincipal extends JFrame {
 		});
 	}
 		
+	/**
+	 * Organiza o JFrame atraves de JPanels, uma para o menu, que é fixo, e outra para o conteudo, para a melhor visualização do usuario. 
+	 * Também abrange diversas funcionalidades visuais como os icones da UnB, do Software e das opções presentes no menu principal.<br>
+	 */
 	public TelaPrincipal() {
 		setBackground(new Color(112, 128, 144));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -254,10 +269,9 @@ public class TelaPrincipal extends JFrame {
 		panel.setVisible(true);
 	}
 	
-	/* 
-	 * 	adiciona funcionalidades ao mouse, como mudar de cor ao passar o mouse acima 
-	 *  de uma label.
-	 */	
+	/**
+	 * adiciona funcionalidades ao mouse, como por exemplo, mudar de cor ao passar o mouse em cima de uma label.
+	 */
 	private class PanelButtonMouseAdapter extends MouseAdapter{		
 		JPanel painel;
 		public PanelButtonMouseAdapter(JPanel painel) {

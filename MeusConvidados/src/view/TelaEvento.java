@@ -26,7 +26,14 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-//JPanel para organizar os dados de eventos de forma mais visual.
+/**
+ * Mostra a JPanel de convidados, com opções de visualizar a lista de eventos, 
+ * além da possibilidade de cadastrar novos eventos, editar e remover atráves dos botões.
+ * 
+ * @Versão 1.0 (Abril 2021)
+ * @author Lameque Fernandes
+ *
+ */
 
 public class TelaEvento extends JPanel {
 	private JTable jTEvento;
@@ -40,12 +47,20 @@ public class TelaEvento extends JPanel {
 	private JTextField txtHorario;
 	private JTextField txtAnotacoes;
 
+	/**
+	 * Recebe a lista de eventos e roda o initComponents.
+	 * @param listaEvento
+	 */
 	public TelaEvento(ArrayList<Evento> listaEvento) {
         //recebe a lista de eventos do Frame
         this.eventoArray = listaEvento;
         initComponents();        
     }
 	
+	/**
+	 * Criação de uma JTable para a melhor visualização da lista de Eventos.<br>
+	 * Também possui JComboBox e botões com eventos que possibilitão a adição, remoção e alteração de convidados.
+	 */
 	private void initComponents() {
 		setBackground(Color.WHITE);
 		setBounds(0, 0, 668, 454);
@@ -166,6 +181,9 @@ public class TelaEvento extends JPanel {
 		add(lblTitulo);
 	}
 	
+	/**
+	 * Possibilita nomear o Evento.
+	 */
 	public void nomeEvento() {
 		txtTitulo = new JTextField();
 		txtTitulo.setBounds(28, 82, 309, 19);
@@ -177,6 +195,9 @@ public class TelaEvento extends JPanel {
 		add(lblNome);
 	}
 	
+	/**
+	 * Campo para digitar a data que vai acontecer o evento.
+	 */
 	public void data() {
 		txtData = new JTextField();
 		txtData.setBounds(28, 182, 148, 19);
@@ -188,6 +209,9 @@ public class TelaEvento extends JPanel {
 		add(lblData);
 	}
 	
+	/**
+	 * Possibilita digitar a hora que o evento vai acontecer
+	 */
 	public void horario() {
 		JLabel lblHorario = new JLabel("Horario de Inicio:");
 		lblHorario.setBounds(188, 164, 149, 15);
@@ -200,6 +224,9 @@ public class TelaEvento extends JPanel {
 		txtHorario.setColumns(10);
 	}
 	
+	/**
+	 * Possibilita digitar anotações sobre o evento
+	 */
 	public void anotacoes() {
 		JLabel lblAnotaes = new JLabel("Anotações:");
 		lblAnotaes.setBounds(28, 213, 148, 15);

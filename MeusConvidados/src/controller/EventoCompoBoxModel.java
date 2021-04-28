@@ -1,13 +1,5 @@
 package controller;
 
-/**
- * Utilizada para facilitar na manipulação da JComboBox que seleciona o <br>
- * Evento que será atribuido ao Convidado, Gasto ou Tarefa.
- * 
- * @Versão 1.0 (Abril 2021)
- * @author Lameque Fernandes
- */
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +8,13 @@ import javax.swing.ComboBoxModel;
 
 import modelo.Evento;
 
-
+/**
+ * Utilizada para facilitar na manipulação da JComboBox que seleciona o <br>
+ * Evento que será atribuido ao Convidado, Gasto ou Tarefa.
+ * 
+ * @Versão 1.0 (Abril 2021)
+ * @author Lameque Fernandes
+ */
 public class EventoCompoBoxModel extends AbstractListModel implements ComboBoxModel{
 
 	
