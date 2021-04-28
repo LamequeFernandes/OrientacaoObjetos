@@ -1,5 +1,12 @@
 package modelo;
 
+
+/**
+ * Determina se o evento, convidado, gasto ou tarefa esta ativo ou inativo
+ * 
+ * @author Lameque Fernandes
+ * @version 1.0 (Abril 2021)
+ */
 public class Status {
 	
 	private boolean convidado;

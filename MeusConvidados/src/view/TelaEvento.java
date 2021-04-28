@@ -169,6 +169,15 @@ public class TelaEvento extends JPanel {
 		JLabel lblHoras = new JLabel("horas");
 		lblHoras.setBounds(297, 184, 62, 15);
 		add(lblHoras);
+		
+		JLabel lblStatus = new JLabel("Status:");
+		lblStatus.setBounds(355, 225, 70, 15);
+		add(lblStatus);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Ativo", "Inativo"}));
+		comboBox.setBounds(355, 242, 98, 19);
+		add(comboBox);
 				
 	}
 	

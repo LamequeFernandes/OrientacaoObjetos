@@ -159,7 +159,16 @@ public class TelaGastos extends JPanel {
 		
 		JLabel lblEvento = new JLabel("Evento:");
 		lblEvento.setBounds(28, 193, 70, 15);
-		add(lblEvento);				
+		add(lblEvento);		
+		
+		JLabel lblStatus = new JLabel("Status:");
+		lblStatus.setBounds(355, 172, 70, 15);
+		add(lblStatus);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Ativo", "Inativo"}));
+		comboBox.setBounds(355, 190, 98, 19);
+		add(comboBox);
 	}
 	
 	public void tituloPagina() {
