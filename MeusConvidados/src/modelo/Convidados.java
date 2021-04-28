@@ -2,16 +2,20 @@ package modelo;
 
 import java.util.Scanner;
 
-public class Convidados extends Pessoa {
+public class Convidados  extends Pessoa{
 
 	// atributo
 	private String tipoConvidado;
 	private Status status;
 	private int numConvidados;
 	private String[] convidadosCadastrados = new String[30];
-
+	
+		
 	Scanner ler = new Scanner(System.in);
 
+	public Convidados() {}
+	public Convidados(String nome, String idadee, String telefone, String sexo, String tipoConvidado) {
+	}
 	// gets e sets
 	public int getNumConvidados() {
 		return numConvidados;
@@ -21,8 +25,6 @@ public class Convidados extends Pessoa {
 		this.numConvidados = numConvidados;
 	}
 
-	public Convidados() {
-	}
 
 	public String getTipoConvidado() {
 		return tipoConvidado;
@@ -72,8 +74,10 @@ public class Convidados extends Pessoa {
 
 	public void setNumTelefone(long numTelefone) {
 		this.numTelefone = numTelefone;
-	}
+	}	
+	
 
+	
 	// metodo para cadastrar convidados
 	public void cadastrar() {
 		System.out.println(" ");
