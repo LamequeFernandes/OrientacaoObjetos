@@ -105,6 +105,11 @@ public class Evento {
 		return nomeEvento;
 	}
 	
+	/**
+	 * Verifica se o horario esta entre as 24horas presentes no dia.
+	 * @param horario
+	 * @return true quaso o usuario tenha digitado um horario valido.
+	 */
 	public boolean validaHorario(int horario) {
 		boolean aux = true;
 		setHorarioInicio(horario);
@@ -113,7 +118,29 @@ public class Evento {
 		
 		if(getHorarioInicio() > 24) 
 			aux = false;					
+		return aux;
+	}
+	
+	/**
+	 * Verifica se a data é valida
+	 * @param data
+	 * @return true se a data for valida
+	 */
+	public boolean validaData(String data) {
+		boolean aux = true;
+		setDataEvento(data);
 		
+		String[] dataSeparada = getDataEvento().split("/");		
+		
+		if(Integer.parseInt(dataSeparada[2]) < 2020) 
+			aux = false;		
+		
+		if(Integer.parseInt(dataSeparada[1]) < 1 || Integer.parseInt(dataSeparada[1]) > 12)
+			aux = false;
+				
+		if(Integer.parseInt(dataSeparada[0]) < 1 || Integer.parseInt(dataSeparada[0]) > 31)
+			aux = false;
+				
 		return aux;
 	}
 	

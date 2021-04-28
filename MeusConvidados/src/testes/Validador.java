@@ -3,12 +3,21 @@ import java.time.LocalDate;
 
 import modelo.*;
 
+/**
+ * 
+ * Classe em que coloquei alguns metodos de classes distintas para melhor visualização dos testes.
+ * 
+ * @author Lameque Fernandes
+ *
+ */
 
 public class Validador {
 	private Evento e;
+	private Convidados c;
 	
 	Evento evento = new Evento();
-
+	Convidados convidados = new Convidados();
+	
 	public Validador() {}
 	
 	public boolean validaHorario(int horario) {
@@ -26,7 +35,6 @@ public class Validador {
 	public boolean validaData(String data) {
 		boolean aux = true;
 		evento.setDataEvento(data);
-	//	data = evento.getDataEvento();
 		
 		String[] dataSeparada = evento.getDataEvento().split("/");		
 		
@@ -40,5 +48,16 @@ public class Validador {
 			aux = false;
 				
 		return aux;
+	}
+	
+	public boolean validaNome(String nome) {
+		boolean aux = true;
+		convidados.setNome(nome);
+		
+		if(!convidados.getNome().substring(0, convidados.getNome().length()).matches("[a-zA-Z\\s]+"))
+			aux = false;			
+		
+		return aux;		
+		
 	}
 }

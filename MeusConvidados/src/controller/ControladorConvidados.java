@@ -84,9 +84,11 @@ public class ControladorConvidados extends AbstractTableModel{
 		 * Adiciona ou "Cadastra" convidado a tabela e atualiza os dados da mesma
 		 * @param c
 		 */
-		public void addLinha(Convidados c) {			
-			this.dados.add(c);
-			this.fireTableDataChanged();
+		public void addLinha(Convidados c) {	
+			if(c.validaNome(c.getNome()) == true) {
+				this.dados.add(c);
+				this.fireTableDataChanged();
+			}
 		}		
 			
 		/**
@@ -97,4 +99,5 @@ public class ControladorConvidados extends AbstractTableModel{
 	        this.dados.remove(linha);
 	        this.fireTableRowsDeleted(linha, linha);
 	    }
+				
 	}

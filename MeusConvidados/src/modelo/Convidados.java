@@ -82,5 +82,20 @@ public class Convidados  extends Pessoa{
 	public void setNumTelefone(long numTelefone) {
 		this.numTelefone = numTelefone;
 	}		
+	
+	/**
+	 * Verifica se o nome possui apenas letras.
+	 * @param nome
+	 * @return true se o nome for valido
+	 */
+	public boolean validaNome(String nome) {
+		boolean aux = true;
+		setNome(nome);
+		
+		if(!getNome().substring(0, getNome().length()).matches("[a-zA-Z\\s]+"))
+			aux = false;			
+		
+		return aux;				
+	}
 
 }

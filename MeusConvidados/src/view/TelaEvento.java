@@ -125,8 +125,7 @@ public class TelaEvento extends JPanel {
 				e.setNomeEvento(txtTitulo.getText());				
 				e.setTipoEvento(tipoEvento);
 		        e.setDataEvento((txtData.getText()));		        
-		        if(tableModel.validaHorario(e.getHorarioInicio()) == true)
-		        	e.setHorarioInicio(Integer.parseInt(txtHorario.getText()));
+		        e.setHorarioInicio(Integer.parseInt(txtHorario.getText()));
 		        
 		        tableModel.addLinha(e);
 		        eventoArray.add(e);

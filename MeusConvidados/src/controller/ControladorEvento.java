@@ -80,10 +80,12 @@ public class ControladorEvento extends AbstractTableModel{
 		 * Adiciona ou "Cadastra" Evento a tabela e atualiza os dados da mesma
 		 * @param e
 		 */
-		public void addLinha(Evento e) {			
-			this.dados.add(e);
-			this.fireTableDataChanged();
-		}		
+		public void addLinha(Evento e) {
+			if(e.validaData(e.getDataEvento()) == true && e.validaHorario(e.getHorarioInicio()) == true) {
+				this.dados.add(e);
+				this.fireTableDataChanged();	
+			}		
+		}	
 		
 		/**
 		 * Remove Evento da tabela e atualiza os dados da mesma
@@ -92,16 +94,6 @@ public class ControladorEvento extends AbstractTableModel{
 		public void removeLinha(int linha){
 	        this.dados.remove(linha);
 	        this.fireTableRowsDeleted(linha, linha);
-	    }
+	    }		
 		
-		public boolean validaHorario(int horario) {
-			boolean aux = true;
-			evento.setHorarioInicio(horario);
-			if(evento.getHorarioInicio() < 0) 
-				aux = false;		
-			
-			if(evento.getHorarioInicio() > 24) 
-				aux = false;					
-			return aux;
-		}
 	}

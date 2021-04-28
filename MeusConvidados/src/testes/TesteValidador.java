@@ -26,5 +26,13 @@ class TesteValidador {
 		assertFalse(v.validaData("02/13/2029"));
 		assertFalse(v.validaData("03/04/2019"));
 	}
+	
+	@Test
+	void testValidaNome() {
+		assertTrue(v.validaNome("Lameque Fernandes"));
+		assertTrue(v.validaNome("Marquinhos"));
+		assertFalse(v.validaNome("Mariaj0aquinh4"));
+		assertFalse(v.validaNome("Ciril0"));
+	}
 
 }
