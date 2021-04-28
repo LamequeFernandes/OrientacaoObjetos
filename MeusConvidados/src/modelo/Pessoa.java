@@ -1,12 +1,12 @@
 package modelo;
 
+
 /**
  * Determina que tipo de dados tera as pessoas(convidados) e são implementados atraves dos gets e sets
  * 
  * @author Lameque Fernandes
- * @versão 1.0 (Abril 2021)
+ * @version 1.0 (Abril 2021)
  */
-
 public abstract class Pessoa {
 
 	protected int idade;

@@ -11,7 +11,7 @@ import modelo.Gastos;
  * Organiza e controla de modo eficiente os dados dos Gastos e guarda-os em modelo de tabela. <br>
  * Além de cadastrar, editar e remover Gastos
  * 
- * @Versão 1.0 (Abril 2021)
+ * @version 1.0 (Abril 2021)
  * @author Lameque Fernandes
  */
 public class ControladorGastos extends AbstractTableModel{

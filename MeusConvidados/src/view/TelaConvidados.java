@@ -34,7 +34,7 @@ import java.util.ArrayList;
  * Facilita a visualização do programa atraves de uma JPanel, que possibilita a visualização dos convidados cadastrados,
  * além da possibilidade de cadastrar novos convidados, editar e remover.
  * 
- * @Versão 1.0 (Abril 2021)
+ * @version 1.0 (Abril 2021)
  * @author Lameque Fernandes
  */
 public class TelaConvidados extends JPanel {

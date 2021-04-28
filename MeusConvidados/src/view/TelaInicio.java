@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 /**
  * Apresenta o software ao usuario.
  * 
- * @Versão 1.0 (Abril 2021)
+ * @version 1.0 (Abril 2021)
  * @author Lameque Fernandes
  */
 public class TelaInicio extends JPanel {

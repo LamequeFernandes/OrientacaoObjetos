@@ -33,7 +33,7 @@ import javax.swing.JComboBox;
  * Facilita a visualização do programa atraves de uma JPanel, que possibilita a visualização dos Gastos cadastrados,
  * além da possibilidade de cadastrar novos gastos, editar e remover.
  * 
- * @Versão 1.0 (Abril 2021)
+ * @version 1.0 (Abril 2021)
  * @author Lameque Fernandes
  */
 public class TelaGastos extends JPanel {

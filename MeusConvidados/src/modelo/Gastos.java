@@ -1,15 +1,15 @@
 package modelo;
 
-/**
- * Defini os dados de Gastos implementado os gets e sets
- * 
- * @author Lameque Fernandes
- * @versão 1.0 (Abril 2021)
- */
 
 
 import java.util.Scanner;
 
+/**
+ * Defini os dados de Gastos implementado os gets e sets
+ * 
+ * @author Lameque Fernandes
+ * @version 1.0 (Abril 2021)
+ */
 public class Gastos{
 	//atributos
 	private String descricaoGasto;

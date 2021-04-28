@@ -1,14 +1,14 @@
 package modelo;
 
+
+import java.util.Scanner;
+
 /**
  * Defini os dados dos convidados implementado os gets e sets dos convidados
  * 
  * @author Lameque Fernandes
- * @versão 1.0 (Abril 2021)
+ * @version 1.0 (Abril 2021)
  */
-
-import java.util.Scanner;
-
 public class Convidados  extends Pessoa{	
 	
 	private String tipoConvidado;

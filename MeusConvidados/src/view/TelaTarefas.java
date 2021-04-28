@@ -34,7 +34,7 @@ import javax.swing.JComboBox;
  * Facilita a visualização do programa atraves de uma JPanel, que possibilita a visualização das tarefas cadastradas,
  * além da possibilidade de cadastrar novas tarefas, editar e remover.
  * 
- * @Versão 1.0 (Abril 2021)
+ * @version 1.0 (Abril 2021)
  * @author Lameque Fernandes
  */
 public class TelaTarefas extends JPanel {

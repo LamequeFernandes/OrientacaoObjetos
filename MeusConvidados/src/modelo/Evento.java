@@ -1,14 +1,14 @@
 package modelo;
-/**
- * Defini os dados do evento implementado os gets e sets dos convidados
- * 
- * @versão 1.0 (Abril 2021)
- * @author lameque
- */
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Defini os dados do evento implementado os gets e sets dos convidados
+ * 
+ * @version 1.0 (Abril 2021)
+ * @author lameque
+ */
 public class Evento {
 
 	//atributos

@@ -30,7 +30,7 @@ import java.util.ArrayList;
  * Mostra a JPanel de convidados, com opções de visualizar a lista de eventos, 
  * além da possibilidade de cadastrar novos eventos, editar e remover atráves dos botões.
  * 
- * @Versão 1.0 (Abril 2021)
+ * @version 1.0 (Abril 2021)
  * @author Lameque Fernandes
  *
  */
